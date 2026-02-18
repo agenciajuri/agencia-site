@@ -101,7 +101,7 @@ export function Header() {
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* Mobile Menu Overlay */}
+                {/* Mobile Menu Overlay - Portaled to Body */}
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
@@ -109,8 +109,17 @@ export function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 z-40 bg-white md:hidden flex flex-col pt-32 px-8 gap-8"
+                            className="fixed inset-0 z-[60] bg-white md:hidden flex flex-col pt-32 px-8 gap-8"
                         >
+                            {/* Close Button inside Overlay for z-index safety */}
+                            <button
+                                className="absolute top-6 right-4 p-2 text-primary"
+                                onClick={() => setIsOpen(false)}
+                                aria-label="Close menu"
+                            >
+                                <X size={24} />
+                            </button>
+
                             {NAV_LINKS.map((link) => (
                                 <Link
                                     key={link.href}
