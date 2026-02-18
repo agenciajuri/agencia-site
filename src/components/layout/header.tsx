@@ -28,7 +28,10 @@ export function Header() {
 
     // Close mobile menu on route change
     useEffect(() => {
-        setIsOpen(false);
+        if (isOpen) {
+            setIsExiting(true);
+            setIsOpen(false);
+        }
     }, [pathname]);
 
     // Lock body scroll when menu is open
@@ -44,7 +47,7 @@ export function Header() {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-                isScrolled && !isOpen
+                isScrolled && !(isOpen || isExiting)
                     ? "bg-background/80 backdrop-blur-md border-border py-4 shadow-sm"
                     : "bg-transparent border-transparent py-6"
             )}
@@ -97,14 +100,17 @@ export function Header() {
                 {/* Mobile Toggle */}
                 <button
                     className="md:hidden z-50 p-2 text-primary"
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => {
+                        if (isOpen) setIsExiting(true);
+                        setIsOpen(!isOpen);
+                    }}
                     aria-label="Toggle menu"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
                 {/* Mobile Menu Overlay */}
-                <AnimatePresence>
+                <AnimatePresence onExitComplete={() => setIsExiting(false)}>
                     {isOpen && (
                         <motion.div
                             initial={{ x: "100%" }}
@@ -116,7 +122,7 @@ export function Header() {
                             {/* Close Button inside Overlay */}
                             <button
                                 className="absolute top-6 right-4 p-2 text-primary"
-                                onClick={() => setIsOpen(false)}
+                                onClick={closeMenu}
                                 aria-label="Close menu"
                             >
                                 <X size={24} />
@@ -130,7 +136,7 @@ export function Header() {
                                         "text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
                                         pathname === link.href ? "text-accent" : "text-primary"
                                     )}
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={closeMenu}
                                 >
                                     {link.label}
                                 </Link>
