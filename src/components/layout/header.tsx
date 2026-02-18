@@ -13,8 +13,14 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isExiting, setIsExiting] = useState(false);
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
+
+    const closeMenu = () => {
+        setIsExiting(true);
+        setIsOpen(false);
+    };
 
     useEffect(() => {
         setMounted(true);
@@ -26,6 +32,7 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Close mobile menu on route change
     // Close mobile menu on route change
     useEffect(() => {
         if (isOpen) {
