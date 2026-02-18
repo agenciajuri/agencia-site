@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
+    "inline-flex items-center justify-center whitespace-normal text-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
     {
         variants: {
             variant: {
@@ -21,10 +21,10 @@ const buttonVariants = cva(
                 whatsapp: "bg-[#25D366] text-white hover:bg-[#128C7E] uppercase font-bold tracking-wide shadow-sm hover:shadow-md",
             },
             size: {
-                default: "h-11 px-8 py-2",
-                sm: "h-9 px-4",
-                lg: "h-14 px-10 text-base",
-                icon: "h-10 w-10",
+                default: "min-h-[44px] h-auto px-8 py-3", // Touch target compliant
+                sm: "min-h-[36px] h-auto px-4 py-2",
+                lg: "min-h-[56px] h-auto px-10 py-4 text-base",
+                icon: "h-10 w-10", // Iconic buttons usually stay fixed
             },
             shape: {
                 default: "rounded-md", // Professional/Sharp
