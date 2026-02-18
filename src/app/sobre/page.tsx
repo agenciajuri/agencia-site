@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Users, Target, Rocket } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
     title: "Sobre a Agência Juri | Quem Somos",
@@ -12,24 +13,29 @@ const TEAM = [
         name: "Airton L. Souza",
         role: "CTO & Founder",
         bio: "Engenharia de dados aplicada ao marketing jurídico.",
-        image: "/airton.jpg"
+        image: "/airton.jpg",
+        imagePosition: "object-[50%_25%]"
     },
     {
         name: "Ismar Junior",
         role: "Comercial e Jurídico",
         bio: "Advogado especialista em compliance e negociação.",
-        image: "/ismarjr.jpg"
+        image: "/ismarjr.jpg",
+        imagePosition: "object-[50%_25%]"
     },
     {
         name: "Guilherme Iachitzki",
         role: "Comercial Operacional",
         bio: "Especialista em expansão de carteira e fechamento.",
-        image: "/guilherme.jpg"
+        image: "/guilherme.jpg",
+        imagePosition: "object-[50%_25%]"
     },
     {
         name: "Lucas Mazakenji",
         role: "Growth Marketing e Designer",
-        bio: "Criatividade focada em performance e branding."
+        bio: "Criatividade focada em performance e branding.",
+        image: "/lucasmazakenji.PNG",
+        imagePosition: "object-[50%_25%]"
     }
 ];
 
@@ -86,7 +92,10 @@ export default function AboutPage() {
                                             src={(member as any).image}
                                             alt={member.name}
                                             fill
-                                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                            className={cn(
+                                                "object-cover grayscale group-hover:grayscale-0 transition-all duration-500",
+                                                (member as any).imagePosition || "object-center"
+                                            )}
                                         />
                                     ) : (
                                         <div className="w-full h-full flex items-center justify-center text-muted-foreground/30 font-display text-4xl uppercase">

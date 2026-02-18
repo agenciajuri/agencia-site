@@ -109,7 +109,7 @@ export function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 z-40 bg-background md:hidden flex flex-col pt-32 px-8 gap-8"
+                            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm md:hidden flex flex-col pt-32 px-8 gap-8"
                         >
                             {NAV_LINKS.map((link) => (
                                 <Link
