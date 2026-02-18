@@ -1,6 +1,5 @@
-"use client";
-
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,9 +12,11 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
+        setMounted(true);
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 24);
         };
@@ -101,46 +102,49 @@ export function Header() {
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* Mobile Menu Overlay - Portaled to Body */}
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 z-[60] bg-white md:hidden flex flex-col pt-32 px-8 gap-8"
-                        >
-                            {/* Close Button inside Overlay for z-index safety */}
-                            <button
-                                className="absolute top-6 right-4 p-2 text-primary"
-                                onClick={() => setIsOpen(false)}
-                                aria-label="Close menu"
+                {/* Mobile Menu Overlay - Portal to Body */}
+                {mounted && createPortal(
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.div
+                                initial={{ x: "100%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "100%" }}
+                                transition={{ type: "tween", duration: 0.3 }}
+                                className="fixed inset-0 z-[100] bg-background md:hidden flex flex-col pt-32 px-8 gap-8"
                             >
-                                <X size={24} />
-                            </button>
-
-                            {NAV_LINKS.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={cn(
-                                        "text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
-                                        pathname === link.href ? "text-accent" : "text-primary"
-                                    )}
+                                {/* Close Button inside Overlay */}
+                                <button
+                                    className="absolute top-6 right-4 p-2 text-primary"
                                     onClick={() => setIsOpen(false)}
+                                    aria-label="Close menu"
                                 >
-                                    {link.label}
-                                </Link>
-                            ))}
-                            <Button size="lg" className="w-full mt-auto mb-8 rounded-full" asChild>
-                                <Link href={SITE_CONFIG.links.whatsapp} target="_blank">
-                                    Falar no WhatsApp
-                                </Link>
-                            </Button>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                                    <X size={24} />
+                                </button>
+
+                                {NAV_LINKS.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={cn(
+                                            "text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
+                                            pathname === link.href ? "text-accent" : "text-primary"
+                                        )}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                                <Button size="lg" className="w-full mt-auto mb-8 rounded-full" asChild>
+                                    <Link href={SITE_CONFIG.links.whatsapp} target="_blank">
+                                        Falar no WhatsApp
+                                    </Link>
+                                </Button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>,
+                    document.body
+                )}
             </div>
         </header>
     );
