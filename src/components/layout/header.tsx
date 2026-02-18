@@ -140,7 +140,7 @@ export function Header() {
                                     key={link.href}
                                     href={link.href}
                                     className={cn(
-                                        "text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
+                                        "block text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
                                         pathname === link.href ? "text-accent" : "text-primary"
                                     )}
                                     onClick={closeMenu}
