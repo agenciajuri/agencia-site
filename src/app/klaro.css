@@ -123,6 +123,21 @@
     font-weight: 600 !important;
 }
 
-.klaro a:hover {
-    text-decoration: underline !important;
+@media (max-width: 768px) {
+    .klaro .cookie-notice {
+        padding: 1rem !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+
+    .klaro .cookie-notice .cn-body {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .klaro .cm-btn {
+        width: 100% !important;
+        display: block !important;
+        margin: 0.25rem 0 !important;
+    }
 }
