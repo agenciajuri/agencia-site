@@ -18,9 +18,9 @@ const PACKAGES = [
         description: "Ideal para quem quer o primeiro cliente pago em 30-45 dias.",
         features: [
             "Diagnóstico Comercial",
-            "1 Landing Page de Alta Conversão",
-            "Setup de WhatsApp Business",
-            "Campanhas Google/Meta Ads",
+            "1 Página Exclusiva de Apresentação",
+            "WhatsApp Profissional Configurado",
+            "Anúncios Direcionados (Google/Meta)",
             "Relatório Quinzenal"
         ],
         cta: "Selecionar Plano",
@@ -34,7 +34,7 @@ const PACKAGES = [
         description: "Para escritórios que precisam organizar o fluxo de entrada.",
         features: [
             "Estratégia por Área de Atuação",
-            "2 Landing Pages",
+            "2 Páginas Exclusivas de Apresentação",
             "Funil Completo de Triagem",
             "Mensuração Avançada (UTMs)",
             "Governança Semanal"

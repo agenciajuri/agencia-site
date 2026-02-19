@@ -48,7 +48,7 @@ export function Hero() {
                         transition={{ duration: 0.5 }}
                         className="inline-block mb-6 px-4 py-1.5 border border-primary/20 bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase"
                     >
-                        Marketing Jurídico com Compliance OAB
+                        Gestão & Marketing Jurídico
                     </motion.div>
 
                     {/* Headline */}
@@ -59,7 +59,7 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                         >
-                            Estrutura de
+                            Transforme seu
                         </motion.span>
                         <motion.span
                             className="block text-accent"
@@ -67,7 +67,7 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            Captação & Controle
+                            Escritório
                         </motion.span>
                         <motion.span
                             className="block"
@@ -75,7 +75,7 @@ export function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
-                            Para Advogados: Do Clique ao Agendamento em Até 45 Dias
+                            Em uma Empresa Organizada
                         </motion.span>
                     </h1>
 
@@ -86,7 +86,7 @@ export function Hero() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
                     >
-                        Planos fixos a partir de R$ 997. Organizamos seu comercial jurídico com método, mensuração e blindagem ética. Sem mágica. Apenas processos que já funcionaram em +40 escritórios.
+                        Implementamos um setor comercial validado no seu escritório em 45 dias. Sem promessas vazias, apenas processos de gestão e crescimento ético.
                     </motion.p>
 
                     {/* CTA Buttons */}

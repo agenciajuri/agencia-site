@@ -14,9 +14,9 @@ const PLANS = [
         persona: "Autônomo ou início de carreira",
         features: [
             "Diagnóstico Comercial",
-            "1 Landing Page de Alta Conversão",
+            "1 Página Exclusiva de Apresentação",
             "WhatsApp Profissional Configurado",
-            "Campanhas Google/Meta Ads",
+            "Anúncios Direcionados (Google/Meta)",
             "Relatório Quinzenal"
         ],
         idealFor: "Ideal para quem quer o primeiro cliente pago em 30-45 dias."
@@ -28,7 +28,7 @@ const PLANS = [
         persona: "Pequeno escritório (2-5 advogados)",
         features: [
             "Estratégia por Área de Atuação",
-            "2 Landing Pages",
+            "2 Páginas Exclusivas de Apresentação",
             "Funil Completo de Triagem",
             "Rastreamento de Origem do Cliente",
             "Reunião de Acompanhamento Semanal"

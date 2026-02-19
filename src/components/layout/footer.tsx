@@ -22,6 +22,9 @@ export function Footer() {
                         <p className="text-secondary/80 max-w-xs leading-relaxed">
                             Marketing jurídico com método, mensuração e compliance. Estrutura profissional para escritórios que querem crescer com segurança.
                         </p>
+                        <p className="text-secondary/50 text-xs leading-relaxed border-t border-white/10 pt-4 mt-4">
+                            Nota: A advocacia é atividade de meio, não de fim. Não prometemos resultados de causa. Respeitamos rigorosamente o Provimento 205/2021 da OAB.
+                        </p>
                     </div>
 
                     {/* Links */}
