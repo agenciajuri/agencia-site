@@ -13,7 +13,7 @@ const STEPS = [
     {
         icon: Search,
         title: "1. Diagnóstico & Setup",
-        desc: "Analisamos seu posicionamento atual, definimos as áreas prioritárias e configuramos o ambiente (Pixel, Analytics, Contas de Anúncio)."
+        desc: "Analisamos seu posicionamento atual, definimos as áreas prioritárias e configuramos o ambiente (Pixel de Rastreamento, Analytics, Contas de Anúncio)."
     },
     {
         icon: Layout,
@@ -23,7 +23,7 @@ const STEPS = [
     {
         icon: MessageSquare,
         title: "3. Tração & Atendimento",
-        desc: "Lançamos as campanhas e estruturamos seu WhatsApp com scripts de triagem para filtrar curiosos."
+        desc: "Lançamos as campanhas e estruturamos seu WhatsApp com scripts de pré-atendimento (triagem) para filtrar curiosos."
     },
     {
         icon: BarChart,

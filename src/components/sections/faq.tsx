@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const FAQS = [
     {
         question: "Vocês fazem marketing jurídico sem risco com a OAB?",
-        answer: "Trabalhamos com comunicação informativa e sobriedade, alinhando peças e páginas às regras aplicáveis e evitando promessas, apelos e linguagem mercantilista."
+        answer: "Trabalhamos com comunicação informativa e sobriedade, alinhando peças e páginas às regras aplicáveis e evitando promessas, apelos e linguagem agressiva ou comercial demais."
     },
     {
         question: "Marketing jurídico é permitido?",

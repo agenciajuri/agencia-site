@@ -1,16 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function Hero() {
+    const { scrollY } = useScroll();
+    const backgroundY = useTransform(scrollY, [0, 1000], [0, 400]);
+    const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+
     return (
         <section className="relative min-h-[90vh] flex items-center pt-40 md:pt-48 pb-16 overflow-hidden bg-background">
-            {/* Background Elements */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
+            {/* Background Elements - Parallax Layer */}
+            <motion.div
+                style={{ y: backgroundY, opacity }}
+                className="absolute inset-0 z-0 pointer-events-none"
+            >
                 <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl opacity-50" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl opacity-50" />
                 {/* Abstract Code-Based Animation (Placeholder Replacement) */}
@@ -29,7 +36,7 @@ export function Hero() {
                     <div className="absolute inset-4 border-[1px] border-primary/10 rounded-full" />
                     <div className="absolute inset-8 border-[1px] border-primary/5 rounded-full" />
                 </motion.div>
-            </div>
+            </motion.div>
 
             <div className="container px-4 md:px-6 z-10">
                 <div className="max-w-5xl mx-auto">

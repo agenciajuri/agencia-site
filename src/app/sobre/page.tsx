@@ -47,7 +47,7 @@ export default function AboutPage() {
                     Quem Somos
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                    &quot;Nosso time combina visão jurídica, engenharia de marketing e execução prática para construir captação ética e mensurável.&quot;
+                    &quot;Nosso time combina visão jurídica, estratégia baseada em dados reais e execução prática para construir captação ética e mensurável.&quot;
                 </p>
             </section>
 

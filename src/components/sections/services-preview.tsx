@@ -15,7 +15,7 @@ const PLANS = [
         features: [
             "Diagnóstico Comercial",
             "1 Landing Page de Alta Conversão",
-            "Setup de WhatsApp Business",
+            "WhatsApp Profissional Configurado",
             "Campanhas Google/Meta Ads",
             "Relatório Quinzenal"
         ],
@@ -30,8 +30,8 @@ const PLANS = [
             "Estratégia por Área de Atuação",
             "2 Landing Pages",
             "Funil Completo de Triagem",
-            "Mensuração Avançada (UTMs)",
-            "Governança Semanal"
+            "Rastreamento de Origem do Cliente",
+            "Reunião de Acompanhamento Semanal"
         ],
         idealFor: "Para escritórios que precisam organizar o fluxo de entrada.",
         featured: true
