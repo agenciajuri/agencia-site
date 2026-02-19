@@ -39,7 +39,7 @@ export function Header() {
             setIsExiting(true);
             setIsOpen(false);
         }
-    }, [pathname]);
+    }, [pathname, isOpen]);
 
     // Lock body scroll when menu is open
     useEffect(() => {
