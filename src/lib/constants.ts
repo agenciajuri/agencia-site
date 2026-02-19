@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
     name: "Agência Juri",
     description: "Marketing Jurídico de Alta Performance",
-    url: "https://agenciajuri.com.br",
-    ogImage: "https://agenciajuri.com.br/og.jpg",
+    url: "https://www.agenciajuri.com.br",
+    ogImage: "https://www.agenciajuri.com.br/og.jpg",
     contact: {
         phone: "(62) 99690-3303",
         email: "contato@agenciajuri.com.br",
