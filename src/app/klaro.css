@@ -1,0 +1,113 @@
+/* Custom Klaro! Theme for Agência Juri */
+:root {
+    --klaro-green: #3D5A59;
+    /* Petrol Green (Project Accent) */
+    --klaro-gray: #1A1A1A;
+    /* Charcoal (Project Primary) */
+}
+
+/* Modal Overlay */
+.klaro .cookie-modal {
+    border-radius: 6px !important;
+    font-family: var(--font-montserrat), sans-serif !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Modal Title */
+.klaro .cookie-modal .cm-modal .cm-header h1 {
+    color: var(--klaro-gray) !important;
+    font-family: var(--font-bebas), sans-serif !important;
+    font-size: 2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Modal Text */
+.klaro .cookie-modal .cm-modal p,
+.klaro .cookie-modal .cm-modal label,
+.klaro .cookie-modal .cm-modal .cm-body {
+    color: #4B5563 !important;
+    /* Gray-600 */
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Purpose Titles */
+.klaro .cookie-modal .cm-modal .cm-body .cm-list .cm-list-label .cm-list-title {
+    color: var(--klaro-gray) !important;
+    font-weight: 700 !important;
+}
+
+/* Buttons */
+.klaro .cm-btn {
+    border-radius: 6px !important;
+    padding: 10px 24px !important;
+    font-family: var(--font-montserrat), sans-serif !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    transition: all 0.3s ease !important;
+}
+
+/* "Accept All" Button (Primary) */
+.klaro .cm-btn.cm-btn-success {
+    background-color: var(--klaro-gray) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--klaro-gray) !important;
+}
+
+.klaro .cm-btn.cm-btn-success:hover {
+    background-color: #2b2b2b !important;
+}
+
+/* "Decline" / "Save" Buttons (Secondary) */
+.klaro .cm-btn.cm-btn-danger,
+.klaro .cm-btn.cm-btn-info {
+    background-color: transparent !important;
+    color: var(--klaro-gray) !important;
+    border: 2px solid #E5E7EB !important;
+    /* Gray-200 */
+}
+
+.klaro .cm-btn.cm-btn-danger:hover,
+.klaro .cm-btn.cm-btn-info:hover {
+    border-color: var(--klaro-gray) !important;
+    background-color: #f3f4f6 !important;
+}
+
+/* Switches */
+.klaro .slider {
+    background-color: #ccc !important;
+}
+
+.klaro .slider:before {
+    background-color: white !important;
+}
+
+.klaro input:checked+.slider {
+    background-color: var(--klaro-green) !important;
+}
+
+/* Consent Notice (Bottom Bar) */
+.klaro .cookie-notice {
+    background-color: #ffffff !important;
+    border-top: 1px solid #E5E7EB !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+    padding: 1rem !important;
+}
+
+.klaro .cookie-notice .cn-body p {
+    color: #4B5563 !important;
+}
+
+/* Link Style */
+.klaro a {
+    color: var(--klaro-green) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+
+.klaro a:hover {
+    text-decoration: underline !important;
+}
