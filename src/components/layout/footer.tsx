@@ -62,7 +62,7 @@ export function Footer() {
                 <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary/60">
                     <p>© {year} {SITE_CONFIG.name}. Todos os direitos reservados.</p>
                     <div className="flex items-center gap-4">
-                        <span>CNPJ: XX.XXX.XXX/0001-XX</span>
+                        <span>CNPJ: 47.593.922/0001-13</span>
                     </div>
                 </div>
             </div>
