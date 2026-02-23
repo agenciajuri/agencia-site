@@ -11,44 +11,44 @@ const PLANS = [
         name: "Essencial",
         price: "R$ 997",
         period: "/mês",
-        persona: "Autônomo ou início de carreira",
+        persona: "1º Fluxo de Clientes",
         features: [
-            "Diagnóstico Comercial",
+            "Diagnóstico de Atuação",
             "1 Página Exclusiva de Apresentação",
             "WhatsApp Profissional Configurado",
             "Anúncios Direcionados (Google/Meta)",
-            "Relatório Quinzenal"
+            "Relatório Quinzenal de Contatos"
         ],
-        idealFor: "Ideal para quem quer o primeiro cliente pago em 30-45 dias."
+        idealFor: "Para o advogado autônomo que precisa do primeiro fluxo de clientes pagos."
     },
     {
         name: "Crescimento",
         price: "R$ 1.797",
         period: "/mês",
-        persona: "Pequeno escritório (2-5 advogados)",
+        persona: "Volume Constante",
         features: [
             "Estratégia por Área de Atuação",
             "2 Páginas Exclusivas de Apresentação",
-            "Funil Completo de Triagem",
-            "Rastreamento de Origem do Cliente",
+            "Funil Completo de Triagem Automática",
+            "Rastreamento de Interesse Real",
             "Reunião de Acompanhamento Semanal"
         ],
-        idealFor: "Para escritórios que precisam organizar o fluxo de entrada.",
+        idealFor: "Para escritórios que já têm equipe e precisam de volume constante.",
         featured: true
     },
     {
         name: "Escala",
         price: "R$ 2.597",
         period: "/mês",
-        persona: "Boutique ou Consolidado",
+        persona: "Autoridade Máxima",
         features: [
             "Site Institucional Completo",
             "SEO Local Otimizado",
-            "Funis por Unidade/Sócio",
-            "Dashboards de BI em Tempo Real",
+            "Funis por Unidade ou Sócio",
+            "Painel de Controle de Resultados",
             "Consultoria Compliance Contínua"
         ],
-        idealFor: "Dominar a região e escalar operação comercial."
+        idealFor: "Para quem quer dominar sua região e ser autoridade máxima na área."
     }
 ];
 
@@ -59,7 +59,7 @@ export function ServicesPreview() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-5xl font-display uppercase tracking-tight mb-4">
-                            Qual pacote cabe no seu momento?
+                            Planos com foco em resultados
                         </h2>
                         <p className="text-lg text-muted-foreground">
                             Escolha o plano que combina com o porte do seu escritório. Tudo com compliance OAB e mensuração real de agendamentos.

@@ -7,28 +7,24 @@ import { cn } from "@/lib/utils";
 
 const FAQS = [
     {
-        question: "Vocês fazem marketing jurídico sem risco com a OAB?",
-        answer: "Trabalhamos com comunicação informativa e sobriedade, alinhando peças e páginas às regras aplicáveis e evitando promessas, apelos e linguagem agressiva ou comercial demais."
+        question: "Vou levar processo ético na OAB?",
+        answer: "Não. Nossa equipe revisa tudo com base no Provimento 205/2021. Criamos campanhas informativas e elegantes, sem promessas de resultado ou mercantilização para que você não tenha dores de cabeça."
     },
     {
-        question: "Marketing jurídico é permitido?",
-        answer: "Sim, desde que respeite limites éticos e normas da OAB, com foco informativo."
+        question: "Preciso gravar vídeos e virar influencer?",
+        answer: "Não necessariamente. Nossa estratégia foca em atrair clientes que já estão buscando advogados ativamente (Rede de Pesquisa do Google). O conteúdo nas redes sociais é um apoio, mas não a única forma de obter contratos."
     },
     {
-        question: "Eu já tentei tráfego e não funcionou. O que muda aqui?",
-        answer: "Normalmente falha por falta de estrutura: página ruim, mensagem inicial fraca, atendimento desorganizado e ausência de mensuração. A gente corrige o sistema inteiro, não só 'o anúncio'."
+        question: "Em quanto tempo recebo o primeiro contato?",
+        answer: "Implementamos a sua estrutura comercial em 45 dias. Após o início das campanhas, o fluxo de potenciais clientes costuma iniciar nos primeiros dias subsequentes, estabilizando com a otimização diária."
     },
     {
-        question: "Vocês prometem resultados?",
-        answer: "Não. Promessa fere boa prática e aumenta risco de frustração. Nosso compromisso é com processo, rastreabilidade e melhoria contínua."
+        question: "Já contratei agência e só ganhei 'likes'. O que muda?",
+        answer: "Muda o foco de métricas. Não acompanhamos curtidas, seguidores ou alcance. O que importa no nosso Painel de Controle de Resultados é quantos contatos com interesse real (potenciais clientes) chegaram ao seu WhatsApp."
     },
     {
-        question: "Qual o melhor: formulário ou WhatsApp?",
-        answer: "Depende do seu momento. WhatsApp costuma reduzir atrito; formulário melhora qualificação. Podemos usar ambos com rastreio por origem."
-    },
-    {
-        question: "Quanto tempo para começar?",
-        answer: "Como você decide rápido: dá para iniciar com um setup essencial e evoluir por etapas (estrutura → mensuração → otimização)."
+        question: "Como os clientes vão me achar na internet?",
+        answer: "Mapeamos os termos jurídicos que as pessoas digitam no Google ao precisarem de ajuda legal. Quando pesquisarem pelo seu serviço, o seu escritório aparecerá no topo da lista, de forma estratégica e qualificada."
     }
 ];
 
