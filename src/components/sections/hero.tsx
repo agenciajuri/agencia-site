@@ -69,14 +69,14 @@ export function Hero() {
                         >
                             Clientes Qualificados
                         </motion.span>
-                        <motion.span
+                        {/* <motion.span
                             className="block"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                         >
                             Todos os dias.
-                        </motion.span>
+                        </motion.span> */}
                         <motion.span
                             className="block text-2xl md:text-4xl lg:text-5xl mt-4 text-primary/80"
                             initial={{ opacity: 0, y: 20 }}
