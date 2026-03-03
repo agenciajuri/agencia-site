@@ -122,7 +122,7 @@ export function Methodology() {
                                                 {step.title}
                                             </h3>
                                             <p className="text-primary/80 font-bold tracking-wide italic text-sm mb-2">
-                                                "{step.microcopy}"
+                                                &ldquo;{step.microcopy}&rdquo;
                                             </p>
                                             <p className="text-muted-foreground leading-relaxed text-sm mb-4">
                                                 <strong className="text-foreground/80 font-semibold">O que entrega:</strong> {step.desc}

@@ -53,10 +53,10 @@ export function PainPoints() {
                         </h2>
 
                         <p className="text-lg text-foreground/75 leading-relaxed md:max-w-md border-l-2 border-primary/20 pl-6 mb-6">
-                            Em áreas de alta demanda, o que mata a conversão é: "respondo depois", conversa perdida e lead frio. Sua secretária digital faz o primeiro atendimento do jeito certo e te entrega clareza e prioridade.
+                            Em áreas de alta demanda, o que mata a conversão é: &quot;respondo depois&quot;, conversa perdida e lead frio. Sua secretária digital faz o primeiro atendimento do jeito certo e te entrega clareza e prioridade.
                         </p>
                         <p className="text-lg text-foreground/75 leading-relaxed md:max-w-md border-l-2 border-accent pl-6 bg-accent/10 py-4">
-                            <strong className="text-primary">Resultado:</strong> menos tempo perdido com "curioso", menos interrupção e mais atendimentos encaminhados com organização.
+                            <strong className="text-primary">Resultado:</strong> menos tempo perdido com &quot;curioso&quot;, menos interrupção e mais atendimentos encaminhados com organização.
                         </p>
                     </div>
 

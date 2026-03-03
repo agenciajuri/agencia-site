@@ -101,7 +101,7 @@ export function Hero() {
                         transition={{ duration: 1, delay: 0.6 }}
                         className="text-base sm:text-lg md:text-xl text-white max-w-2xl mb-8 leading-relaxed border-l-4 border-accent pl-4 sm:pl-6 bg-black/80 py-3 sm:py-4 pr-4"
                     >
-                        Em áreas de alta demanda, o gargalo não é "faltar anúncio". O gargalo é processo: lead entra, rola demora na resposta, a conversa vira bagunça e o lead esfria. <strong className="text-accent font-bold">A gente estrutura toda sua operação</strong> para atrair, converter, atender e agendar no automático.
+                        Em áreas de alta demanda, o gargalo não é &quot;faltar anúncio&quot;. O gargalo é processo: lead entra, rola demora na resposta, a conversa vira bagunça e o lead esfria. <strong className="text-accent font-bold">A gente estrutura toda sua operação</strong> para atrair, converter, atender e agendar no automático.
                     </motion.p>
 
                     {/* Quick Proof Bullets */}

@@ -36,7 +36,7 @@ export function ConversionSystem() {
                         </p>
                         <div className="bg-background border border-primary/20 p-5 sm:p-6 md:p-8 shadow-sm relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
-                            <p className="font-bold text-primary mb-4 uppercase text-sm md:text-base tracking-wider">A automação mantém o lead no trilho e te entrega a conversa "mastigada":</p>
+                            <p className="font-bold text-primary mb-4 uppercase text-sm md:text-base tracking-wider">A automação mantém o lead no trilho e te entrega a conversa &quot;mastigada&quot;:</p>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base text-muted-foreground">
                                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> O que a pessoa quer</li>
                                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Qual o contexto</li>
@@ -95,14 +95,14 @@ export function ConversionSystem() {
                             Método para baixar custo e subir qualidade.
                         </p>
                         <p className="text-secondary/80 mb-8 leading-relaxed relative z-10">
-                            Tráfego não é "impulsionar" e torcer. Nosso foco é atrair leads com intenção real, reduzir custo e melhorar a consistência com testes contínuos.
+                            Tráfego não é &quot;impulsionar&quot; e torcer. Nosso foco é atrair leads com intenção real, reduzir custo e melhorar a consistência com testes contínuos.
                         </p>
                         <ul className="space-y-4 text-sm md:text-base text-secondary/80 mb-8 border-t border-white/10 pt-8 relative z-10">
                             <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Criativos e mensagens por área específica</li>
                             <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Testes constantes para achar o que gera lead melhor (não só barato)</li>
                             <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Otimização cirúrgica por métricas e qualidade de contato</li>
                             <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Ritmo quinzenal: o que foi testado, o que ganhou, o que muda</li>
-                            <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Nós trabalhamos de forma proativa: você não precisa "pedir ajuste"</li>
+                            <li className="flex items-start gap-3"><div className="w-2 h-2 bg-accent mt-1.5 rounded-none shrink-0" /> Nós trabalhamos de forma proativa: você não precisa &quot;pedir ajuste&quot;</li>
                         </ul>
                     </motion.div>
                 </div>
