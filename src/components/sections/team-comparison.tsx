@@ -86,7 +86,7 @@ export function TeamComparison() {
                         >
                             <span className="w-8 h-[2px] bg-accent" />
                             <span className="text-accent text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
-                                O Time Sênior
+                                Simulação de Custo de Mercado
                             </span>
                         </motion.div>
 
@@ -97,8 +97,8 @@ export function TeamComparison() {
                             transition={{ delay: 0.1 }}
                             className="text-3xl md:text-5xl font-display uppercase tracking-tighter leading-[0.9] mb-6 text-primary"
                         >
-                            Acesse a operação <br />
-                            <span className="text-muted-foreground">sem inchar a folha.</span>
+                            Quanto custaria montar <br />
+                            <span className="text-muted-foreground">esse time internamente?</span>
                         </motion.h2>
 
                         <motion.p
@@ -106,10 +106,24 @@ export function TeamComparison() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed max-w-xl"
+                            className="text-base md:text-lg mb-4 leading-relaxed max-w-xl text-foreground/80"
                         >
-                            Para ter nossa operação rodando internamente no seu escritório, você precisaria montar e gerenciar um squad com salários nessa base:
+                            Para rodar a mesma operação que a gente entrega — táfego, automação, site e dados — seu escritório precisaria contratar esses profissionais de forma independente, cada um com seu salário de mercado:
                         </motion.p>
+
+                        {/* Disclaimer — preempts price confusion */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.25 }}
+                            className="flex items-start gap-3 mb-8 bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700 px-4 py-3"
+                        >
+                            <span className="text-amber-500 text-lg font-black shrink-0 mt-0.5">!</span>
+                            <p className="text-sm text-amber-800 dark:text-amber-300 font-medium leading-snug">
+                                <strong>Atenção:</strong> os valores abaixo são salários estimados de mercado para cada profissional contratado de forma independente. <strong>Não são o preço do nosso serviço.</strong> Esta simulação existe para mostrar o contexto do investimento alternativo.
+                            </p>
+                        </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0.98 }}
@@ -120,8 +134,8 @@ export function TeamComparison() {
                         >
                             {/* Table Header */}
                             <div className="flex border-b border-primary/20 p-4 bg-primary text-secondary">
-                                <span className="w-1/2 font-bold uppercase tracking-wider text-xs md:text-sm">Cargo Sênior</span>
-                                <span className="w-1/2 font-bold uppercase tracking-wider text-xs md:text-sm">Meta Mercado (Mês)</span>
+                                <span className="w-1/2 font-bold uppercase tracking-wider text-xs md:text-sm">Profissional (Contratação Direta)</span>
+                                <span className="w-1/2 font-bold uppercase tracking-wider text-xs md:text-sm">Salário Mercado / Mês</span>
                             </div>
 
                             {/* Table Rows with staggered animation + count-up per row */}
@@ -139,15 +153,15 @@ export function TeamComparison() {
 
                             {/* Table Footer — big animated total */}
                             <div className="p-6 md:p-8 bg-zinc-50 dark:bg-zinc-900 border-t-4 border-accent">
-                                <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Custo Fixo Total Estimado</span>
-                                <div className="text-2xl md:text-4xl font-display font-bold text-primary tracking-tighter mb-4 tabular-nums">
+                                <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-1">Se você contratasse cada um separadamente, o custo mensal seria:</span>
+                                <div className="text-2xl md:text-4xl font-display font-bold text-primary tracking-tighter mb-3 tabular-nums">
                                     R$ <span ref={totalMinRef}>0</span>
                                     {" "}<span className="text-lg md:text-2xl text-muted-foreground font-sans">a</span>{" "}
                                     R$ <span ref={totalMaxRef}>0</span>
                                     <span className="text-lg text-muted-foreground font-sans tracking-normal">/mês</span>
                                 </div>
                                 <p className="text-xs md:text-sm text-muted-foreground italic">
-                                    * Sem contar encargos, ferramentas caríssimas, servidores e a gestão desse time.
+                                    * Sem contar encargos trabalhistas, ferramentas, servidores e o tempo de gestão desse time.
                                 </p>
                             </div>
                         </motion.div>
@@ -157,10 +171,13 @@ export function TeamComparison() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 }}
-                            className="mt-8 p-6 border-l-4 border-primary bg-primary/5"
+                            className="mt-8 p-6 border-l-4 border-accent bg-accent/5"
                         >
-                            <p className="font-medium text-primary text-lg leading-snug">
-                                Com a Agência Juri, você acessa essa capacidade como serviço. De forma integrada, fatiada e focada 100% em execução.
+                            <p className="font-bold text-primary text-base md:text-lg leading-snug mb-1">
+                                Com a Agência Juri, você acessa essa mesma capacidade operacional
+                            </p>
+                            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                                sem contratar, sem gerenciar e sem fixo elevado. Um serviço integrado, focado em execução e resultado para o seu escritório.
                             </p>
                         </motion.div>
                     </div>
