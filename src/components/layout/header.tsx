@@ -13,17 +13,13 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isExiting, setIsExiting] = useState(false);
-    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
     const closeMenu = () => {
-        setIsExiting(true);
         setIsOpen(false);
     };
 
     useEffect(() => {
-        setMounted(true);
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 24);
         };
@@ -36,10 +32,9 @@ export function Header() {
     // Close mobile menu on route change
     useEffect(() => {
         if (isOpen) {
-            setIsExiting(true);
             setIsOpen(false);
         }
-    }, [pathname, isOpen]);
+    }, [pathname]);
 
     // Lock body scroll when menu is open
     useEffect(() => {
@@ -54,9 +49,10 @@ export function Header() {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-                isScrolled && !(isOpen || isExiting)
+                isScrolled && !isOpen
                     ? "bg-background/80 backdrop-blur-md border-border py-4 shadow-sm"
-                    : "bg-transparent border-transparent py-6"
+                    : "bg-transparent border-transparent py-6",
+                isOpen && "bg-background border-border"
             )}
         >
             <div className="container flex items-center justify-between px-4 md:px-6">
@@ -106,56 +102,40 @@ export function Header() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden z-50 p-2 text-primary"
-                    onClick={() => {
-                        if (isOpen) setIsExiting(true);
-                        setIsOpen(!isOpen);
-                    }}
+                    className="md:hidden relative z-[110] p-2 text-primary"
+                    onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
+                    aria-expanded={isOpen}
                 >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
 
                 {/* Mobile Menu Overlay */}
-                <AnimatePresence onExitComplete={() => setIsExiting(false)}>
-                    {isOpen && (
-                        <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 z-[100] bg-background md:hidden flex flex-col pt-32 px-8 gap-8"
-                        >
-                            {/* Close Button inside Overlay */}
-                            <button
-                                className="absolute top-6 right-4 p-2 text-primary"
-                                onClick={closeMenu}
-                                aria-label="Close menu"
-                            >
-                                <X size={24} />
-                            </button>
-
-                            {NAV_LINKS.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={cn(
-                                        "block text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
-                                        pathname === link.href ? "text-accent" : "text-primary"
-                                    )}
-                                    onClick={closeMenu}
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                            <Button size="lg" className="w-full mt-auto mb-8 rounded-full" asChild>
-                                <Link href={SITE_CONFIG.links.whatsapp} target="_blank">
-                                    Falar no WhatsApp
-                                </Link>
-                            </Button>
-                        </motion.div>
+                <div
+                    className={cn(
+                        "fixed inset-0 z-[100] bg-background md:hidden flex flex-col pt-32 px-8 gap-8 transition-transform duration-300 ease-in-out",
+                        isOpen ? "translate-x-0" : "translate-x-full"
                     )}
-                </AnimatePresence>
+                >
+                    {NAV_LINKS.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={cn(
+                                "block text-3xl font-display uppercase tracking-tight border-b border-border/50 pb-4",
+                                pathname === link.href ? "text-accent" : "text-primary"
+                            )}
+                            onClick={closeMenu}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Button size="lg" className="w-full mt-auto mb-8 rounded-full" asChild>
+                        <Link href={SITE_CONFIG.links.whatsapp} target="_blank">
+                            Falar no WhatsApp
+                        </Link>
+                    </Button>
+                </div>
             </div>
         </header>
     );

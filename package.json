@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
