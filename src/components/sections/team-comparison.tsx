@@ -117,10 +117,10 @@ export function TeamComparison() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.25 }}
-                            className="flex items-start gap-3 mb-8 bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-700 px-4 py-3"
+                            className="flex items-start gap-3 mb-8 bg-amber-50 border border-amber-300 px-4 py-3"
                         >
                             <span className="text-amber-500 text-lg font-black shrink-0 mt-0.5">!</span>
-                            <p className="text-sm text-amber-800 dark:text-amber-300 font-medium leading-snug">
+                            <p className="text-sm text-amber-800 font-medium leading-snug">
                                 <strong>Atenção:</strong> os valores abaixo são salários estimados de mercado para cada profissional contratado de forma independente. <strong>Não são o preço do nosso serviço.</strong> Esta simulação existe para mostrar o contexto do investimento alternativo.
                             </p>
                         </motion.div>
@@ -152,7 +152,7 @@ export function TeamComparison() {
                             </div>
 
                             {/* Table Footer — big animated total */}
-                            <div className="p-6 md:p-8 bg-zinc-50 dark:bg-zinc-900 border-t-4 border-accent">
+                            <div className="p-6 md:p-8 bg-zinc-50 border-t-4 border-accent">
                                 <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-1">Se você contratasse cada um separadamente, o custo mensal seria:</span>
                                 <div className="text-2xl md:text-4xl font-display font-bold text-primary tracking-tighter mb-3 tabular-nums">
                                     R$ <span ref={totalMinRef}>0</span>
