@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 const PACKAGES = [
     {
         title: "Essencial",
-        price: "R$ 997/mês",
         target: "Autônomo ou início de carreira",
         icon: Users,
         description: "Ideal para quem quer o primeiro cliente pago em 30-45 dias.",
@@ -23,12 +22,11 @@ const PACKAGES = [
             "Anúncios Direcionados (Google/Meta)",
             "Relatório Quinzenal"
         ],
-        cta: "Selecionar Plano",
+        cta: "Falar com Consultor",
         highlight: false
     },
     {
         title: "Crescimento",
-        price: "R$ 1.797/mês",
         target: "Pequeno escritório (2-5 advogados)",
         icon: Building,
         description: "Para escritórios que precisam organizar o fluxo de entrada.",
@@ -39,12 +37,11 @@ const PACKAGES = [
             "Mensuração Avançada (UTMs)",
             "Governança Semanal"
         ],
-        cta: "Selecionar Plano",
+        cta: "Falar com Consultor",
         highlight: true
     },
     {
         title: "Escala",
-        price: "R$ 2.597/mês",
         target: "Boutique ou Consolidado",
         icon: Building2,
         description: "Dominar a região e escalar operação comercial.",
@@ -55,7 +52,7 @@ const PACKAGES = [
             "Dashboards de BI em Tempo Real",
             "Consultoria Compliance Contínua"
         ],
-        cta: "Selecionar Plano",
+        cta: "Falar com Consultor",
         highlight: false
     }
 ];
@@ -96,11 +93,8 @@ export default function ServicesPage() {
                                     <h3 className="text-2xl font-display uppercase tracking-wide mb-1">
                                         {pkg.title}
                                     </h3>
-                                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1">
+                                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4">
                                         {pkg.target}
-                                    </p>
-                                    <p className="text-2xl font-bold text-foreground mb-4">
-                                        {pkg.price}
                                     </p>
                                     <p className="text-muted-foreground text-sm leading-relaxed min-h-[40px]">
                                         {pkg.description}

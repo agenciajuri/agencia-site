@@ -9,8 +9,6 @@ import { cn } from "@/lib/utils";
 const PLANS = [
     {
         name: "Essencial",
-        price: "R$ 997",
-        period: "/mês",
         persona: "1º Fluxo de Clientes",
         features: [
             "Diagnóstico de Atuação",
@@ -23,8 +21,6 @@ const PLANS = [
     },
     {
         name: "Crescimento",
-        price: "R$ 1.797",
-        period: "/mês",
         persona: "Volume Constante",
         features: [
             "Estratégia por Área de Atuação",
@@ -38,8 +34,6 @@ const PLANS = [
     },
     {
         name: "Escala",
-        price: "R$ 2.597",
-        period: "/mês",
         persona: "Autoridade Máxima",
         features: [
             "Site Institucional Completo",
@@ -95,10 +89,6 @@ export function ServicesPreview() {
                                 <p className="text-sm text-muted-foreground mb-4 font-medium uppercase tracking-wider">
                                     {plan.persona}
                                 </p>
-                                <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                                    <span className="text-muted-foreground">{plan.period}</span>
-                                </div>
                             </div>
 
                             <ul className="mb-8 space-y-3 flex-1">
@@ -120,7 +110,7 @@ export function ServicesPreview() {
                                     asChild
                                 >
                                     <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
-                                        Selecionar Plano
+                                        Falar com Consultor
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Link>
                                 </Button>

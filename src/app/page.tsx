@@ -1,6 +1,8 @@
 import { Hero } from "@/components/sections/hero";
 import { PainPoints } from "@/components/sections/pain-points";
 import { Methodology } from "@/components/sections/methodology";
+import { ConversionSystem } from "@/components/sections/conversion-system";
+import { TeamComparison } from "@/components/sections/team-comparison";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { SocialProof } from "@/components/sections/social-proof";
 import { Compliance } from "@/components/sections/compliance";
@@ -12,6 +14,8 @@ export default function Home() {
             <Hero />
             <PainPoints />
             <Methodology />
+            <ConversionSystem />
+            <TeamComparison />
             <ServicesPreview />
             <Compliance />
             <SocialProof />

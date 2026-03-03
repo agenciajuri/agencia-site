@@ -7,24 +7,20 @@ import { cn } from "@/lib/utils";
 
 const FAQS = [
     {
-        question: "Vou levar processo ético na OAB?",
-        answer: "Não. Nossa equipe revisa tudo com base no Provimento 205/2021. Criamos campanhas informativas e elegantes, sem promessas de resultado ou mercantilização para que você não tenha dores de cabeça."
+        question: "Isso substitui meu atendimento?",
+        answer: "Não. Organiza o início: triagem, qualificação, follow-up e agendamento. Você entra com prioridade e contexto."
     },
     {
-        question: "Preciso gravar vídeos e virar influencer?",
-        answer: "Não necessariamente. Nossa estratégia foca em atrair clientes que já estão buscando advogados ativamente (Rede de Pesquisa do Google). O conteúdo nas redes sociais é um apoio, mas não a única forma de obter contratos."
+        question: "Dá pra atender áudio?",
+        answer: "Sim — a automação entende áudio e texto, transcreve e organiza."
     },
     {
-        question: "Em quanto tempo recebo o primeiro contato?",
-        answer: "Implementamos a sua estrutura comercial em 45 dias. Após o início das campanhas, o fluxo de potenciais clientes costuma iniciar nos primeiros dias subsequentes, estabilizando com a otimização diária."
+        question: "Dá pra usar com Google Calendar?",
+        answer: "Sim — agenda e confirmações com base na sua disponibilidade."
     },
     {
-        question: "Já contratei agência e só ganhei 'likes'. O que muda?",
-        answer: "Muda o foco de métricas. Não acompanhamos curtidas, seguidores ou alcance. O que importa no nosso Painel de Controle de Resultados é quantos contatos com interesse real (potenciais clientes) chegaram ao seu WhatsApp."
-    },
-    {
-        question: "Como os clientes vão me achar na internet?",
-        answer: "Mapeamos os termos jurídicos que as pessoas digitam no Google ao precisarem de ajuda legal. Quando pesquisarem pelo seu serviço, o seu escritório aparecerá no topo da lista, de forma estratégica e qualificada."
+        question: "Serve pra escritório pequeno/médio?",
+        answer: "É onde mais ajuda, porque reduz perda por falta de tempo e cria processo sem aumentar equipe."
     }
 ];
 
