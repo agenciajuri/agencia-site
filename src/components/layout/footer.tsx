@@ -29,7 +29,7 @@ export function Footer() {
 
                     {/* Links */}
                     <div className="space-y-4">
-                        <h4 className="font-bold uppercase tracking-wide text-white">Navegação</h4>
+                        <h3 className="font-bold uppercase tracking-wide text-white">Navegação</h3>
                         <ul className="space-y-2">
                             <li><Link href="/servicos" className="hover:text-white transition-colors">Serviços</Link></li>
                             <li><Link href="/como-trabalhamos" className="hover:text-white transition-colors">Metodologia</Link></li>
@@ -40,7 +40,7 @@ export function Footer() {
 
                     {/* Legal */}
                     <div className="space-y-4">
-                        <h4 className="font-bold uppercase tracking-wide text-white">Legal & Compliance</h4>
+                        <h3 className="font-bold uppercase tracking-wide text-white">Legal & Compliance</h3>
                         <ul className="space-y-2">
                             <li><Link href="/politica-de-privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link></li>
                             <li><Link href="/termos" className="hover:text-white transition-colors">Termos de Uso</Link></li>
@@ -50,7 +50,7 @@ export function Footer() {
 
                     {/* Contact */}
                     <div className="space-y-4">
-                        <h4 className="font-bold uppercase tracking-wide text-white">Contato</h4>
+                        <h3 className="font-bold uppercase tracking-wide text-white">Contato</h3>
                         <address className="not-italic space-y-2 text-secondary/80">
                             <p>{SITE_CONFIG.contact.address}</p>
                             <p>{SITE_CONFIG.contact.phone}</p>

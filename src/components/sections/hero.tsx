@@ -23,8 +23,9 @@ export function Hero() {
                     alt="Estátua da Justiça com balança e espada em fundo escuro"
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover object-left md:object-center grayscale-[50%] opacity-90"
-                    quality={90}
+                    quality={60}
                 />
                 {/* Heavy Overlay — raised for text contrast */}
                 <div className="absolute inset-0 bg-black/90 mix-blend-multiply" />

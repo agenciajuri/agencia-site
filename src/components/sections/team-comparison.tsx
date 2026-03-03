@@ -6,38 +6,37 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
 
-/** Animates a number from 0 to `target` when the ref enters the viewport */
-function useCountUp(target: number, decimals = 0) {
-    const ref = useRef<HTMLSpanElement>(null);
-    const inView = useInView(ref, { once: true, margin: "-80px" });
+/** Self-contained component to animate numbers when they enter the viewport */
+function CountUpAmount({ target, decimals = 0, className }: { target: number, decimals?: number, className?: string }) {
+    const nodeRef = useRef<HTMLSpanElement>(null);
 
-    useEffect(() => {
-        if (!inView) return;
-        const node = ref.current;
-        if (!node) return;
-
-        const controls = animate(0, target, {
-            duration: 1.8,
-            ease: [0.16, 1, 0.3, 1],
-            onUpdate(value) {
-                node.textContent = value.toLocaleString("pt-BR", {
-                    minimumFractionDigits: decimals,
-                    maximumFractionDigits: decimals,
+    return (
+        <motion.span
+            ref={nodeRef}
+            className={className}
+            onViewportEnter={() => {
+                const node = nodeRef.current;
+                if (!node) return;
+                animate(0, target, {
+                    duration: 1.8,
+                    ease: [0.16, 1, 0.3, 1],
+                    onUpdate(value) {
+                        node.textContent = value.toLocaleString("pt-BR", {
+                            minimumFractionDigits: decimals,
+                            maximumFractionDigits: decimals,
+                        });
+                    },
                 });
-            },
-        });
-
-        return () => controls.stop();
-    }, [inView, target, decimals]);
-
-    return ref;
+            }}
+            viewport={{ once: true }}
+        >
+            0
+        </motion.span>
+    );
 }
 
 /** Each salary row — extracted to honour React hooks rules */
 function CostRow({ role, min, max, delay }: { role: string; min: number; max: number; delay: number }) {
-    const minRef = useCountUp(min);
-    const maxRef = useCountUp(max);
-
     return (
         <motion.div
             initial={{ x: -16 }}
@@ -51,9 +50,9 @@ function CostRow({ role, min, max, delay }: { role: string; min: number; max: nu
                 <span className="text-sm md:text-base font-semibold text-primary">{role}</span>
             </div>
             <div className="w-1/2 text-sm md:text-base font-mono font-semibold text-primary tabular-nums">
-                R$ <span ref={minRef}>0</span>{" "}
+                R$ <CountUpAmount target={min} />{" "}
                 <span className="text-muted-foreground font-sans text-xs">a</span>{" "}
-                R$ <span ref={maxRef}>0</span>/mês
+                R$ <CountUpAmount target={max} />/mês
             </div>
         </motion.div>
     );
@@ -66,9 +65,6 @@ export function TeamComparison() {
         { role: "Growth Marketing Sênior", min: 17500, max: 29200 },
         { role: "Growth Comercial/Business", min: 21100, max: 36800 },
     ];
-
-    const totalMinRef = useCountUp(64950);
-    const totalMaxRef = useCountUp(110150);
 
     return (
         <section className="py-24 md:py-32 bg-secondary/5 border-t border-border relative overflow-hidden" id="operacao">
@@ -155,9 +151,9 @@ export function TeamComparison() {
                             <div className="p-6 md:p-8 bg-zinc-50 border-t-4 border-accent">
                                 <span className="block text-xs uppercase tracking-widest text-muted-foreground mb-1">Se você contratasse cada um separadamente, o custo mensal seria:</span>
                                 <div className="text-2xl md:text-4xl font-display font-bold text-primary tracking-tighter mb-3 tabular-nums">
-                                    R$ <span ref={totalMinRef}>0</span>
+                                    R$ <CountUpAmount target={64950} />
                                     {" "}<span className="text-lg md:text-2xl text-muted-foreground font-sans">a</span>{" "}
-                                    R$ <span ref={totalMaxRef}>0</span>
+                                    R$ <CountUpAmount target={110150} />
                                     <span className="text-lg text-muted-foreground font-sans tracking-normal">/mês</span>
                                 </div>
                                 <p className="text-xs md:text-sm text-muted-foreground italic">
