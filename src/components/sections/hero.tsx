@@ -59,7 +59,7 @@ export function Hero() {
                             Seu Escritório
                         </motion.span>
                         <motion.span
-                            className="block text-accent"
+                            className="block text-cyan-400"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -101,28 +101,15 @@ export function Hero() {
                         transition={{ duration: 1, delay: 0.6 }}
                         className="text-base sm:text-lg md:text-xl text-white max-w-2xl mb-8 leading-relaxed border-l-4 border-accent pl-4 sm:pl-6 bg-black/80 py-3 sm:py-4 pr-4"
                     >
-                        Em áreas de alta demanda, o gargalo não é &quot;faltar anúncio&quot;. O gargalo é processo: lead entra, rola demora na resposta, a conversa vira bagunça e o lead esfria. <strong className="text-accent font-bold">A gente estrutura toda sua operação</strong> para atrair, converter, atender e agendar no automático.
+                        Em áreas de alta demanda, o gargalo não é &quot;faltar anúncio&quot;. O gargalo é processo: lead entra, rola demora na resposta, a conversa vira bagunça e o lead esfria. <strong className="text-cyan-400 font-bold">A gente estrutura toda sua operação</strong> para atrair, converter, atender e agendar no automático.
                     </motion.p>
-
-                    {/* Quick Proof Bullets */}
-                    <motion.ul
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.65 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 text-sm sm:text-base font-semibold"
-                    >
-                        <li className="flex items-center gap-3 bg-black/70 px-3 py-2.5 text-white"><div className="w-2 h-2 bg-accent rounded-full shrink-0" /> Atendimento texto + áudio, 24h/dia</li>
-                        <li className="flex items-center gap-3 bg-black/70 px-3 py-2.5 text-white"><div className="w-2 h-2 bg-accent rounded-full shrink-0" /> Follow-up automático no lead frio</li>
-                        <li className="flex items-center gap-3 bg-black/70 px-3 py-2.5 text-white"><div className="w-2 h-2 bg-accent rounded-full shrink-0" /> Agendamento no Google Calendar</li>
-                        <li className="flex items-center gap-3 bg-black/70 px-3 py-2.5 text-white"><div className="w-2 h-2 bg-accent rounded-full shrink-0" /> Resumo enviado direto no seu WhatsApp</li>
-                    </motion.ul>
 
                     {/* Actions */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-col sm:flex-row gap-4 sm:gap-5"
+                        className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-16"
                     >
                         <Button
                             size="lg"

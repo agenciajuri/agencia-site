@@ -40,7 +40,7 @@ function CostRow({ role, min, max, delay }: { role: string; min: number; max: nu
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -16 }}
+            initial={{ x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay, ease: [0.22, 1, 0.36, 1] }}
