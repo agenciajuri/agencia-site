@@ -21,6 +21,7 @@ export function PainPoints() {
                         src="/image/sobre-valores-justica-maos-profissional.jpg"
                         alt="Pessoa segurando estátua da Justiça, com destaque para a balança"
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover object-center grayscale-[50%] opacity-40 md:opacity-70"
                     />
                     {/* Gradient fade to blend with background on the left edge */}
