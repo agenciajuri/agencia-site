@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/hero";
+import { PaidTraffic } from "@/components/sections/paid-traffic";
 import { PainPoints } from "@/components/sections/pain-points";
-import { Methodology } from "@/components/sections/methodology";
 import { ConversionSystem } from "@/components/sections/conversion-system";
 import { TeamComparison } from "@/components/sections/team-comparison";
 import { ServicesPreview } from "@/components/sections/services-preview";
@@ -12,8 +12,8 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <PaidTraffic />
             <PainPoints />
-            <Methodology />
             <ConversionSystem />
             <TeamComparison />
             <ServicesPreview />
