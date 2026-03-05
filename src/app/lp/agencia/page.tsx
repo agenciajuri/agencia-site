@@ -286,10 +286,31 @@ export default function AgencyLandingPage() {
                             </motion.article>
                         ))}
                     </div>
+
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.3}
+                        className="mt-16 md:mt-20 pt-12 border-t border-white/5 text-center"
+                    >
+                        <p className="text-[#7a7890] text-sm md:text-base mb-6 max-w-xl mx-auto">
+                            A mídia já fala. <strong className="text-[#f2f0ea]">Chega de depender só de indicação</strong> — coloque seu escritório em um fluxo previsível.
+                        </p>
+                        <Link
+                            href="https://wa.me/5562996903303?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20agendar%20uma%20reuni%C3%A3o."
+                            target="_blank"
+                            className="group inline-flex items-center justify-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em] relative overflow-hidden"
+                        >
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+                            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                            </svg>
+                            <span className="relative z-10">Quero clientes todo mês, não só quando indicam</span>
+                        </Link>
+                        <p className="text-[11px] md:text-xs text-[#7a7890] mt-4 flex items-center justify-center gap-1.5">
+                            <Lock className="w-3.5 h-3.5 shrink-0" aria-hidden /> Diagnóstico gratuito · Sem compromisso
+                        </p>
+                    </motion.div>
                 </div>
             </section>
-
-            {/* FAQ SECTION */}
             <section className="bg-[#0e0816] text-[#f2f0ea] py-20 px-5 md:px-[5vw] border-t border-white/5 relative z-10 w-full">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
@@ -342,6 +363,29 @@ export default function AgencyLandingPage() {
                             </motion.div>
                         ))}
                     </div>
+
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.4}
+                        className="mt-16 md:mt-20 pt-12 border-t border-white/5 text-center"
+                    >
+                        <p className="text-[#7a7890] text-sm md:text-base mb-6 max-w-xl mx-auto">
+                            <strong className="text-[#f2f0ea]">Chega de meses cheios e meses vazios.</strong> Fluxo previsível de clientes começa com um diagnóstico — sem compromisso.
+                        </p>
+                        <Link
+                            href="https://wa.me/5562996903303?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20agendar%20uma%20reuni%C3%A3o."
+                            target="_blank"
+                            className="group inline-flex items-center justify-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em] relative overflow-hidden"
+                        >
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+                            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                            </svg>
+                            <span className="relative z-10">Agendar meu diagnóstico gratuito</span>
+                        </Link>
+                        <p className="text-[11px] md:text-xs text-[#7a7890] mt-4 flex items-center justify-center gap-1.5">
+                            <Lock className="w-3.5 h-3.5 shrink-0" aria-hidden /> Sem compromisso · Resposta em até 24h
+                        </p>
+                    </motion.div>
                 </div>
             </section>
         </>
