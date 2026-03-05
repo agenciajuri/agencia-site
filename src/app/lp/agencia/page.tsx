@@ -142,7 +142,7 @@ export default function AgencyLandingPage() {
                         className="absolute z-20 top-2 left-2 md:top-8 md:left-8 bg-[#06060c]/85 backdrop-blur-md border border-white/5 rounded-lg p-2.5 md:p-4 scale-90 md:scale-100 origin-top-left"
                     >
                         <div className="font-display text-[1.8rem] md:text-[2rem] leading-none text-[#ff4500]">24/7</div>
-                        <div className="text-[0.65rem] md:text-[0.7rem] text-[#7a7890] mt-1 leading-snug">Atendimento automático<br />no WhatsApp</div>
+                        <div className="text-[0.65rem] md:text-[0.7rem] text-[#f2f0ea] font-medium mt-1 leading-snug">Atendimento automático<br />no WhatsApp</div>
                     </motion.div>
 
                     {/* Floating Stat Card - Bottom Right */}
@@ -151,7 +151,7 @@ export default function AgencyLandingPage() {
                         className="absolute z-20 bottom-3 right-3 md:bottom-12 md:right-8 bg-[#06060c]/85 backdrop-blur-md border border-white/5 rounded-lg p-2.5 md:p-4 scale-90 md:scale-100 origin-bottom-right"
                     >
                         <div className="font-display text-[1.8rem] md:text-[2rem] leading-none text-[#ff4500]">7–14d</div>
-                        <div className="text-[0.65rem] md:text-[0.7rem] text-[#7a7890] mt-1 leading-snug">Para sua operação<br />ir ao ar</div>
+                        <div className="text-[0.65rem] md:text-[0.7rem] text-[#f2f0ea] font-medium mt-1 leading-snug">Para sua operação<br />ir ao ar</div>
                     </motion.div>
 
                     {/* Left Border Separator (Desktop only) */}
@@ -185,7 +185,7 @@ export default function AgencyLandingPage() {
 
                     <motion.p
                         custom={0.35} initial="hidden" animate="visible" variants={fadeUp}
-                        className="text-sm md:text-base text-[#7a7890] font-light leading-[1.6] md:leading-[1.7] max-w-[400px] mb-8 md:mb-10"
+                        className="text-sm md:text-base text-[#f2f0ea] font-medium leading-[1.6] md:leading-[1.7] max-w-[400px] mb-8 md:mb-10"
                     >
                         <strong className="text-[#f2f0ea] font-semibold">Escritório que depende de indicação vive de aperto.</strong> Um mês cheio, dois meses vazios — e o caixa curto aparece antes do próximo cliente.<br /><br />
                         A gente monta um fluxo previsível de clientes para o seu escritório. Todo mês. Sem depender de ninguém.
@@ -203,8 +203,8 @@ export default function AgencyLandingPage() {
                             </svg>
                             <span className="relative z-10 leading-tight">Quero clientes todo mês, <br className="md:hidden" /> não só quando indicam</span>
                         </Link>
-                        <span className="text-[11px] md:text-xs text-[#7a7890] flex items-center justify-center w-full md:justify-start gap-1.5 md:gap-2">
-                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#7a7890]" aria-hidden /> Diagnóstico gratuito · Sem compromisso
+                        <span className="text-[11px] md:text-xs text-[#f2f0ea] font-medium flex items-center justify-center w-full md:justify-start gap-1.5 md:gap-2">
+                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Diagnóstico gratuito · Sem compromisso
                         </span>
                     </motion.div>
 
@@ -218,7 +218,7 @@ export default function AgencyLandingPage() {
                         <span className="px-3 md:px-3.5 py-1 md:py-1.5 rounded-full border border-[#ff4500]/30 bg-[#ff4500]/10 text-[#ff7043] font-medium text-[11px] md:text-xs inline-flex items-center gap-1.5">
                             <Zap className="w-3.5 h-3.5 shrink-0" aria-hidden /> Meta Ads + Google Ads
                         </span>
-                        <span className="px-3 md:px-3.5 py-1 md:py-1.5 rounded-full border border-white/5 text-[#7a7890] font-medium text-[11px] md:text-xs inline-flex items-center gap-1.5">
+                        <span className="px-3 md:px-3.5 py-1 md:py-1.5 rounded-full border border-white/5 text-[#f2f0ea] font-medium text-[11px] md:text-xs inline-flex items-center gap-1.5">
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0" aria-hidden /> Compliance OAB
                         </span>
                     </motion.div>
@@ -274,7 +274,7 @@ export default function AgencyLandingPage() {
                                         <h3 className="text-base md:text-lg font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#ff7043] transition-colors">
                                             {noticia.title}
                                         </h3>
-                                        <p className="text-sm text-[#7a7890] leading-relaxed line-clamp-3 mb-4">
+                                        <p className="text-sm text-[#f2f0ea] font-medium leading-relaxed line-clamp-3 mb-4">
                                             {noticia.summary}
                                         </p>
                                         <span className="inline-flex items-center gap-2 text-[#ff4500] font-medium text-sm">
@@ -291,7 +291,7 @@ export default function AgencyLandingPage() {
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.3}
                         className="mt-16 md:mt-20 pt-12 border-t border-white/5 text-center"
                     >
-                        <p className="text-[#7a7890] text-sm md:text-base mb-6 max-w-xl mx-auto">
+                        <p className="text-[#f2f0ea] text-sm md:text-base font-medium mb-6 max-w-xl mx-auto">
                             A mídia já fala. <strong className="text-[#f2f0ea]">Chega de depender só de indicação</strong> — coloque seu escritório em um fluxo previsível.
                         </p>
                         <Link
@@ -305,8 +305,8 @@ export default function AgencyLandingPage() {
                             </svg>
                             <span className="relative z-10">Quero clientes todo mês, não só quando indicam</span>
                         </Link>
-                        <p className="text-[11px] md:text-xs text-[#7a7890] mt-4 flex items-center justify-center gap-1.5">
-                            <Lock className="w-3.5 h-3.5 shrink-0" aria-hidden /> Diagnóstico gratuito · Sem compromisso
+                        <p className="text-[11px] md:text-xs text-[#f2f0ea] font-medium mt-4 flex items-center justify-center gap-1.5">
+                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Diagnóstico gratuito · Sem compromisso
                         </p>
                     </motion.div>
                 </div>
@@ -343,7 +343,7 @@ export default function AgencyLandingPage() {
                                     {openIndex === i ? (
                                         <Minus className="h-5 w-5 text-[#ff4500] flex-shrink-0" />
                                     ) : (
-                                        <Plus className="h-5 w-5 text-[#7a7890] flex-shrink-0" />
+                                        <Plus className="h-5 w-5 text-[#f2f0ea] flex-shrink-0" />
                                     )}
                                 </button>
                                 <AnimatePresence>
@@ -354,7 +354,7 @@ export default function AgencyLandingPage() {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="p-5 md:p-6 pt-0 text-[#7a7890] text-sm md:text-base leading-relaxed">
+                                            <div className="p-5 md:p-6 pt-0 text-[#f2f0ea] text-sm md:text-base font-medium leading-relaxed">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>
@@ -368,7 +368,7 @@ export default function AgencyLandingPage() {
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.4}
                         className="mt-16 md:mt-20 pt-12 border-t border-white/5 text-center"
                     >
-                        <p className="text-[#7a7890] text-sm md:text-base mb-6 max-w-xl mx-auto">
+                        <p className="text-[#f2f0ea] text-sm md:text-base font-medium mb-6 max-w-xl mx-auto">
                             <strong className="text-[#f2f0ea]">Chega de meses cheios e meses vazios.</strong> Fluxo previsível de clientes começa com um diagnóstico — sem compromisso.
                         </p>
                         <Link
@@ -382,8 +382,8 @@ export default function AgencyLandingPage() {
                             </svg>
                             <span className="relative z-10">Agendar meu diagnóstico gratuito</span>
                         </Link>
-                        <p className="text-[11px] md:text-xs text-[#7a7890] mt-4 flex items-center justify-center gap-1.5">
-                            <Lock className="w-3.5 h-3.5 shrink-0" aria-hidden /> Sem compromisso · Resposta em até 24h
+                        <p className="text-[11px] md:text-xs text-[#f2f0ea] font-medium mt-4 flex items-center justify-center gap-1.5">
+                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Sem compromisso · Resposta em até 24h
                         </p>
                     </motion.div>
                 </div>
@@ -401,7 +401,7 @@ export default function AgencyLandingPage() {
                     </motion.div>
                     <motion.p
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} variants={fadeUp} custom={0.2}
-                        className="text-[#7a7890] text-sm md:text-base mb-8"
+                        className="text-[#f2f0ea] text-sm md:text-base font-medium mb-8"
                     >
                         Site, redes e mais conteúdo sobre captação para advogados.
                     </motion.p>
