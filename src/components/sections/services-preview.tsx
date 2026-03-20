@@ -109,7 +109,7 @@ export function ServicesPreview() {
                                     className="w-full group"
                                     asChild
                                 >
-                                    <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                    <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                         Falar com Consultor
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Link>

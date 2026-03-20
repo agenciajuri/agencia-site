@@ -127,7 +127,7 @@ export function Methodology() {
                                             <p className="text-muted-foreground leading-relaxed text-sm mb-4">
                                                 <strong className="text-foreground/80 font-semibold">O que entrega:</strong> {step.desc}
                                             </p>
-                                            <Link href="https://typebot.co/diagnostico-advogados" target="_blank" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-accent hover:text-primary transition-colors mt-auto">
+                                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-accent hover:text-primary transition-colors mt-auto">
                                                 {step.cta} <ArrowRight className="ml-2 w-4 h-4" />
                                             </Link>
                                         </div>

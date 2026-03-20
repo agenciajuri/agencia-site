@@ -80,7 +80,7 @@ export function SocialProof() {
                             className="group h-16 md:h-20 px-4 md:px-8 bg-accent text-accent-foreground hover:bg-white hover:text-black rounded-none transition-all text-xs md:text-sm lg:text-base font-bold uppercase tracking-widest shadow-2xl relative overflow-hidden"
                             asChild
                         >
-                            <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                 <span className="relative z-10 flex items-center justify-center w-full">
                                     Quero a operação completa (Site + WA + Tráfego)
                                     <ArrowRight className="ml-3 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
@@ -97,7 +97,7 @@ export function SocialProof() {
                                 className="h-14 md:h-16 px-4 bg-transparent border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60 hover:text-white rounded-none transition-all text-[10px] md:text-xs font-bold uppercase tracking-wider"
                                 asChild
                             >
-                                <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                     Quero parar de perder lead no WhatsApp
                                 </Link>
                             </Button>
@@ -108,7 +108,7 @@ export function SocialProof() {
                                 className="h-14 md:h-16 px-4 bg-transparent border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60 hover:text-white rounded-none transition-all text-[10px] md:text-xs font-bold uppercase tracking-wider"
                                 asChild
                             >
-                                <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                     Quero previsibilidade de captação e agenda
                                 </Link>
                             </Button>

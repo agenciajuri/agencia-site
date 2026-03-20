@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Plus, Minus, Lock, TrendingUp, Bot, Zap, CheckCircle2, ExternalLink, Globe } from "lucide-react";
+import { Plus, Minus, Lock, TrendingUp, Bot, Zap, CheckCircle2, ExternalLink, Globe, Layout } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 
 const FAQS = [
@@ -185,26 +185,40 @@ export default function AgencyLandingPage() {
 
                     <motion.p
                         custom={0.35} initial="hidden" animate="visible" variants={fadeUp}
-                        className="text-sm md:text-base text-[#f2f0ea] font-medium leading-[1.6] md:leading-[1.7] max-w-[400px] mb-8 md:mb-10"
+                        className="text-sm md:text-base text-[#f2f0ea] font-medium leading-[1.6] md:leading-[1.7] max-w-[400px] mb-6 md:mb-8"
                     >
                         <strong className="text-[#f2f0ea] font-semibold">Escritório que depende de indicação vive de aperto.</strong> Um mês cheio, dois meses vazios — e o caixa curto aparece antes do próximo cliente.<br /><br />
-                        A gente monta um fluxo previsível de clientes para o seu escritório. Todo mês. Sem depender de ninguém.
+                        Enquanto muitos advogados esperam indicação, outros já recebem contatos qualificados toda semana no WhatsApp. A gente monta a estrutura que gera esses novos contatos para o seu escritório — todo mês, sem depender de ninguém.<br /><br />
+                        <span className="text-white">Imagine abrir o WhatsApp e ver mensagens de pessoas pedindo ajuda jurídica.</span> É isso que preparamos para você.
                     </motion.p>
 
                     <motion.div custom={0.5} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col gap-3 md:gap-4 items-start w-full md:w-auto">
-                        <Link
-                            href="https://wa.me/5562996903303?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20agendar%20uma%20reuni%C3%A3o."
-                            target="_blank"
-                            className="group w-full md:w-auto justify-center text-center relative overflow-hidden inline-flex items-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
-                        >
-                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
-                            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                            </svg>
-                            <span className="relative z-10 leading-tight">Quero clientes todo mês, <br className="md:hidden" /> não só quando indicam</span>
-                        </Link>
+                        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                className="group w-full md:w-auto justify-center text-center relative overflow-hidden inline-flex items-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span className="relative z-10 leading-tight">Agendar diagnóstico gratuito</span>
+                            </Link>
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full md:w-auto justify-center text-center inline-flex items-center gap-3 border-2 border-white/20 hover:border-[#ff7043] text-[#f2f0ea] hover:text-[#ff7043] px-6 md:px-8 py-4 rounded transition-all duration-200 font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span className="leading-tight">Falar no WhatsApp</span>
+                            </Link>
+                        </div>
                         <span className="text-[11px] md:text-xs text-[#f2f0ea] font-medium flex items-center justify-center w-full md:justify-start gap-1.5 md:gap-2">
-                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Diagnóstico gratuito · Sem compromisso
+                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Analisamos sua área jurídica e sua cidade antes de qualquer campanha · Sem compromisso
                         </span>
                     </motion.div>
 
@@ -221,10 +235,61 @@ export default function AgencyLandingPage() {
                         <span className="px-3 md:px-3.5 py-1 md:py-1.5 rounded-full border border-white/5 text-[#f2f0ea] font-medium text-[11px] md:text-xs inline-flex items-center gap-1.5">
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0" aria-hidden /> Compliance OAB
                         </span>
+                        <span className="px-3 md:px-3.5 py-1 md:py-1.5 rounded-full border border-[#ff4500]/20 bg-[#ff4500]/5 text-[#ff7043] font-medium text-[11px] md:text-xs inline-flex items-center gap-1.5">
+                            Vagas limitadas: até 8 novos escritórios por mês
+                        </span>
                     </motion.div>
                 </div>
 
             </div>
+
+            {/* COMO FUNCIONA */}
+            <section className="bg-[#0e0816] text-[#f2f0ea] py-16 md:py-20 px-5 md:px-[5vw] border-t border-white/5 relative z-10 w-full">
+                <div className="max-w-4xl mx-auto">
+                    <motion.div
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.1}
+                        className="inline-flex items-center gap-2 text-[10px] md:text-xs tracking-[0.14em] uppercase text-[#ff7043] font-semibold mb-3 md:mb-5"
+                    >
+                        <span className="w-5 md:w-6 h-[2px] bg-[#ff4500] inline-block" />
+                        Método simples
+                    </motion.div>
+                    <motion.h2
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.2}
+                        className="font-display text-[2.2rem] md:text-4xl text-white uppercase tracking-tight mb-12"
+                    >
+                        Como funciona
+                    </motion.h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                        {[
+                            { step: 1, icon: Layout, title: "Página de captação", text: "Criamos a página que recebe o visitante e qualifica o interesse." },
+                            { step: 2, icon: Zap, title: "Campanhas no Google e Meta", text: "Ativamos anúncios segmentados para sua área e público." },
+                            { step: 3, icon: Bot, title: "Leads no WhatsApp", text: "Contatos entram no seu WhatsApp automaticamente, 24/7." },
+                            { step: 4, icon: CheckCircle2, title: "Só interessados reais", text: "Você atende apenas quem passou pelos filtros de qualificação." }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-40px" }} variants={fadeUp} custom={0.2 + i * 0.1}
+                                className="flex gap-4 p-5 rounded-lg border border-white/10 bg-[#06060c]/50"
+                            >
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#ff4500]/15 border border-[#ff4500]/30 flex items-center justify-center">
+                                    <item.icon className="w-5 h-5 text-[#ff4500]" aria-hidden />
+                                </div>
+                                <div>
+                                    <div className="text-[10px] md:text-xs font-semibold text-[#ff7043] uppercase tracking-wider mb-1">Passo {item.step}</div>
+                                    <h3 className="text-base md:text-lg font-semibold text-white mb-1">{item.title}</h3>
+                                    <p className="text-sm text-[#f2f0ea] font-medium leading-relaxed">{item.text}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                    <motion.p
+                        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0.5}
+                        className="mt-10 text-center text-sm md:text-base text-[#f2f0ea] font-medium"
+                    >
+                        Atendemos no máximo <strong className="text-[#ff7043]">8 novos escritórios por mês</strong> — agenda limitada para garantir resultado.
+                    </motion.p>
+                </div>
+            </section>
 
             {/* NOTÍCIAS / NA MÍDIA */}
             <section className="bg-[#0e0816] text-[#f2f0ea] py-20 px-5 md:px-[5vw] border-t border-white/5 relative z-10 w-full">
@@ -294,19 +359,32 @@ export default function AgencyLandingPage() {
                         <p className="text-[#f2f0ea] text-sm md:text-base font-medium mb-6 max-w-xl mx-auto">
                             A mídia já fala. <strong className="text-[#f2f0ea]">Chega de depender só de indicação</strong> — coloque seu escritório em um fluxo previsível.
                         </p>
-                        <Link
-                            href="https://wa.me/5562996903303?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20agendar%20uma%20reuni%C3%A3o."
-                            target="_blank"
-                            className="group inline-flex items-center justify-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em] relative overflow-hidden"
-                        >
-                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
-                            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                            </svg>
-                            <span className="relative z-10">Quero clientes todo mês, não só quando indicam</span>
-                        </Link>
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                className="group w-full sm:w-auto justify-center text-center relative overflow-hidden inline-flex items-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span className="relative z-10">Agendar diagnóstico gratuito</span>
+                            </Link>
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto justify-center text-center inline-flex items-center gap-3 border-2 border-white/20 hover:border-[#ff7043] text-[#f2f0ea] hover:text-[#ff7043] px-6 md:px-8 py-4 rounded transition-all duration-200 font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span>Falar no WhatsApp</span>
+                            </Link>
+                        </div>
                         <p className="text-[11px] md:text-xs text-[#f2f0ea] font-medium mt-4 flex items-center justify-center gap-1.5">
-                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Diagnóstico gratuito · Sem compromisso
+                            <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Analisamos sua área e sua cidade antes de qualquer campanha · Sem compromisso
                         </p>
                     </motion.div>
                 </div>
@@ -369,19 +447,32 @@ export default function AgencyLandingPage() {
                         className="mt-16 md:mt-20 pt-12 border-t border-white/5 text-center"
                     >
                         <p className="text-[#f2f0ea] text-sm md:text-base font-medium mb-6 max-w-xl mx-auto">
-                            <strong className="text-[#f2f0ea]">Chega de meses cheios e meses vazios.</strong> Fluxo previsível de clientes começa com um diagnóstico — sem compromisso.
+                            <strong className="text-[#f2f0ea]">Chega de meses cheios e meses vazios.</strong> Fluxo previsível começa com um diagnóstico — analisamos sua área jurídica e sua cidade antes de qualquer campanha.
                         </p>
-                        <Link
-                            href="https://wa.me/5562996903303?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20e%20quero%20agendar%20uma%20reuni%C3%A3o."
-                            target="_blank"
-                            className="group inline-flex items-center justify-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em] relative overflow-hidden"
-                        >
-                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
-                            <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                            </svg>
-                            <span className="relative z-10">Agendar meu diagnóstico gratuito</span>
-                        </Link>
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                className="group w-full sm:w-auto justify-center text-center relative overflow-hidden inline-flex items-center gap-3 bg-[#ff4500] hover:bg-[#ff7043] text-white px-6 md:px-8 py-4 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,69,0,0.35)] font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span className="relative z-10">Agendar meu diagnóstico gratuito</span>
+                            </Link>
+                            <Link
+                                href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto justify-center text-center inline-flex items-center gap-3 border-2 border-white/20 hover:border-[#ff7043] text-[#f2f0ea] hover:text-[#ff7043] px-6 md:px-8 py-4 rounded transition-all duration-200 font-sans font-bold text-[15px] md:text-base tracking-[0.02em]"
+                            >
+                                <svg className="w-5 h-5 md:w-6 md:h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+                                </svg>
+                                <span>Falar no WhatsApp</span>
+                            </Link>
+                        </div>
                         <p className="text-[11px] md:text-xs text-[#f2f0ea] font-medium mt-4 flex items-center justify-center gap-1.5">
                             <Lock className="w-3.5 h-3.5 shrink-0 text-[#f2f0ea]" aria-hidden /> Sem compromisso · Resposta em até 24h
                         </p>

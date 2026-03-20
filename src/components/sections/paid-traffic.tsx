@@ -142,7 +142,7 @@ export function PaidTraffic() {
                                 className="group w-full h-14 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-sm font-bold uppercase tracking-wider items-center justify-center flex"
                                 asChild
                             >
-                                <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                     Quero iniciar o Diagnóstico
                                     <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                                 </Link>
@@ -241,7 +241,7 @@ export function PaidTraffic() {
                         className="group h-16 px-10 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-sm font-bold uppercase tracking-wider"
                         asChild
                     >
-                        <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                        <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                             Quero iniciar o Diagnóstico de Tráfego
                             <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </Link>

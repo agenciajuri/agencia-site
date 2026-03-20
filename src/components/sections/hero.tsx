@@ -117,7 +117,7 @@ export function Hero() {
                             className="group h-14 sm:h-16 px-4 sm:px-8 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-xs sm:text-sm font-bold uppercase tracking-wider text-center"
                             asChild
                         >
-                            <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                 Quero organizar WhatsApp/Agenda
                                 <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
                             </Link>

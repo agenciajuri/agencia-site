@@ -149,7 +149,7 @@ export function ConversionSystem() {
                                     className="w-full group h-16 md:h-20 bg-accent text-accent-foreground rounded-none shadow-xl hover:-translate-y-1 transition-all text-xs md:text-sm font-bold uppercase tracking-wider"
                                     asChild
                                 >
-                                    <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                    <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                         Quero o combo Site + WhatsApp
                                         <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                                     </Link>

@@ -82,7 +82,7 @@ export default function MethodPage() {
                             Faça o diagnóstico rápido (60 segundos) e receba uma recomendação personalizada.
                         </p>
                         <Button variant="outline" size="lg" className="bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-primary transition-colors" asChild>
-                            <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                 Fazer Diagnóstico Rápido
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>

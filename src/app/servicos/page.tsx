@@ -115,7 +115,7 @@ export default function ServicesPage() {
                                     className="w-full"
                                     asChild
                                 >
-                                    <Link href="https://typebot.co/diagnostico-advogados" target="_blank">
+                                    <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
                                         {pkg.cta} <ArrowRight className="ml-2 w-4 h-4" />
                                     </Link>
                                 </Button>
