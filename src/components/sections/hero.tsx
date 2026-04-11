@@ -1,147 +1,178 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+
+const HERO_POSTER = "/image/hero-estatua-justica-balanca-fundo-escuro.jpg";
+const HERO_VIDEO_SRC: string = "https://www.youtube.com/embed/J1gGhFSOtcA?autoplay=1&mute=1&playsinline=1&rel=0";
 
 export function Hero() {
     const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 1000], [0, 300]);
-    const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+    const backgroundY = useTransform(scrollY, [0, 1000], [0, 220]);
+    const backgroundOpacity = useTransform(scrollY, [0, 500], [1, 0.4]);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(true);
+    const hasVideoUrl = HERO_VIDEO_SRC !== "about:blank";
+
+    useEffect(() => {
+        if (!isVideoLoaded) {
+            return;
+        }
+
+        const iframe = iframeRef.current;
+
+        if (!iframe) {
+            return;
+        }
+
+        iframe.src = iframe.dataset.src || "about:blank";
+    }, [isVideoLoaded]);
 
     return (
-        <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-background">
-            {/* Background Image Layer with Parallax */}
-            <motion.div
-                style={{ y, opacity }}
-                className="absolute inset-0 z-0"
-            >
+        <section className="relative flex min-h-[95vh] items-center overflow-hidden bg-background">
+            <motion.div style={{ y: backgroundY, opacity: backgroundOpacity }} className="absolute inset-0 z-0">
                 <Image
-                    src="/image/hero-estatua-justica-balanca-fundo-escuro.jpg"
+                    src={HERO_POSTER}
                     alt="Estátua da Justiça com balança e espada em fundo escuro"
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover object-left md:object-center grayscale-[50%] opacity-90"
+                    className="object-cover object-left md:object-center grayscale-[45%] opacity-90"
                     quality={60}
                 />
-                {/* Heavy Overlay — raised for text contrast */}
-                <div className="absolute inset-0 bg-black/90 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-black/30" />
+                <div className="absolute inset-0 bg-black/85 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-background/60 to-background" />
             </motion.div>
 
-            {/* Content Layer */}
-            <div className="container relative z-10 px-4 md:px-6 pt-36 md:pt-40 lg:pt-32 pointer-events-none">
-                <div className="max-w-4xl mx-auto md:ml-0 md:mr-auto pointer-events-auto">
+            <div className="container relative z-10 px-4 pb-16 pt-32 md:px-6 md:pb-24 md:pt-40 lg:pt-36">
+                <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+                    <div className="lg:col-span-6">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="inline-flex items-center gap-2 bg-black/65 px-3 py-2"
+                        >
+                            <span className="h-[2px] w-8 shrink-0 bg-accent" />
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent md:text-sm">
+                                Engenharia Comercial Jurídica
+                            </span>
+                        </motion.div>
 
-                    {/* Brutalist Label */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                        className="inline-flex items-center gap-2 mb-8"
-                    >
-                        <span className="w-8 h-[2px] bg-accent shrink-0" />
-                        <span className="text-accent text-xs md:text-sm font-bold tracking-[0.2em] uppercase bg-black/70 px-2 py-1">
-                            Não somos ag. genérica. Somos operação de crescimento.
-                        </span>
-                    </motion.div>
-
-                    {/* Massive Typography */}
-                    <h1 className="text-[2.25rem] leading-[0.95] sm:text-5xl lg:text-[4rem] font-display uppercase sm:leading-[0.9] tracking-tighter text-white mb-6 md:mb-8">
-                        <motion.span
-                            className="block text-white mb-2"
+                        <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-8 max-w-3xl text-[2.35rem] font-display leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-[4.2rem]"
                         >
-                            Seu Escritório
-                        </motion.span>
-                        <motion.span
-                            className="block text-cyan-400"
-                            initial={{ opacity: 0, y: 30 }}
+                            Estrutura Comercial para Escritórios de Advocacia em Goiás.
+                        </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-6 max-w-2xl border-l-4 border-accent bg-black/70 px-4 py-4 text-base leading-relaxed text-white/90 sm:px-6 sm:text-lg md:text-xl"
                         >
-                            Não Pode Perder Lead
-                        </motion.span>
-                        <motion.span
-                            className="block text-white mb-4"
-                            initial={{ opacity: 0, y: 30 }}
+                            Unimos Tráfego Pago, Prospecção via IA e Triagem Automática para estruturar previsibilidade na captação de novos contatos para o seu escritório.
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                            transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-6 inline-flex items-center border border-white/15 bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white/80"
                         >
-                            Por Demora no WhatsApp.
-                        </motion.span>
-                    </h1>
+                            Compliance OAB 100% · Provimento 205/2021
+                        </motion.div>
 
-                    {/* Subtítulo — fora do h1, sem uppercase herdado */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 leading-snug"
-                    >
-                        Automação 24/7 + Site de Conversão
-                    </motion.p>
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-lg md:text-xl font-medium text-white/80 mb-8 tracking-wide"
-                    >
-                        Para advocacia de alta demanda.
-                    </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5"
+                        >
+                            <Button
+                                size="lg"
+                            className="group min-h-[56px] h-auto rounded-none border-b-4 border-accent-foreground/50 bg-accent px-4 py-4 text-center text-xs font-bold uppercase tracking-wider leading-tight text-accent-foreground transition-all hover:translate-y-1 hover:border-b-0 sm:min-h-[64px] sm:px-8 sm:text-sm"
+                                asChild
+                            >
+                                <Link
+                                    href="https://viewer.agenciajuri.com.br/diagnostico-advogados"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Consultar Viabilidade para meu Escritório
+                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:ml-3 sm:h-5 sm:w-5" />
+                                </Link>
+                            </Button>
 
-                    {/* Brutalist Subheadline */}
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.6 }}
-                        className="text-base sm:text-lg md:text-xl text-white max-w-2xl mb-8 leading-relaxed border-l-4 border-accent pl-4 sm:pl-6 bg-black/80 py-3 sm:py-4 pr-4"
-                    >
-                        Em áreas de alta demanda, o gargalo não é &quot;faltar anúncio&quot;. O gargalo é processo: lead entra, rola demora na resposta, a conversa vira bagunça e o lead esfria. <strong className="text-cyan-400 font-bold">A gente estrutura toda sua operação</strong> para atrair, converter, atender e agendar no automático.
-                    </motion.p>
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                className="h-14 rounded-none border-zinc-500 bg-black/60 px-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-100 backdrop-blur-md transition-colors hover:bg-white/10 hover:text-white sm:h-16 sm:px-8 sm:text-sm"
+                                asChild
+                            >
+                                <Link href="#metodo">
+                                    Ver como funciona
+                                </Link>
+                            </Button>
+                        </motion.div>
+                    </div>
 
-                    {/* Actions */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-16"
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                        className="lg:col-span-6"
                     >
-                        <Button
-                            size="lg"
-                            className="group h-14 sm:h-16 px-4 sm:px-8 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-xs sm:text-sm font-bold uppercase tracking-wider text-center"
-                            asChild
-                        >
-                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                Quero organizar WhatsApp/Agenda
-                                <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="h-14 sm:h-16 px-4 sm:px-8 rounded-none border-zinc-500 text-zinc-100 hover:text-white hover:bg-white/10 transition-colors text-xs sm:text-sm font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-center"
-                            asChild
-                        >
-                            <Link href="#conversao">
-                                Quero site que converte
-                            </Link>
-                        </Button>
+                        <div className="relative overflow-hidden border-2 border-accent bg-primary shadow-[8px_8px_0_rgba(0,0,0,0.35)]">
+                            <div className="relative aspect-video w-full max-h-[280px] md:max-h-none">
+                                {!isVideoLoaded || !hasVideoUrl ? (
+                                    <>
+                                        <Image
+                                            src={HERO_POSTER}
+                                            alt="Thumbnail do vídeo de apresentação da Agência Juri"
+                                            fill
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            className="object-cover object-center"
+                                        />
+                                        <div className="absolute inset-0 bg-black/45" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+                                        <button
+                                            type="button"
+                                            onClick={() => setIsVideoLoaded(true)}
+                                            className="absolute inset-0 flex items-center justify-center"
+                                            aria-label="Reproduzir vídeo de apresentação"
+                                        >
+                                            <span className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-accent bg-background/85 text-accent transition-transform duration-300 hover:scale-105">
+                                                <Play className="ml-1 h-8 w-8 fill-current" />
+                                            </span>
+                                        </button>
+                                        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/70 px-4 py-3 text-xs uppercase tracking-[0.16em] text-white/70">
+                                            {hasVideoUrl
+                                                ? "Vídeo de apresentação da operação comercial"
+                                                : "VSL em preparação: estrutura visual já aplicada"}
+                                        </div>
+                                    </>
+                                ) : (
+                                    <iframe
+                                        ref={iframeRef}
+                                        title="Vídeo Agência Juri"
+                                        src="about:blank"
+                                        data-src={HERO_VIDEO_SRC}
+                                        className="absolute inset-0 h-full w-full border-0 bg-black"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                )}
+                            </div>
+                        </div>
                     </motion.div>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.9 }}
-                        className="text-xs font-mono text-white/40 mt-6 md:mt-8 uppercase tracking-widest bg-black/50 inline-block px-3 py-1"
-                    >
-                        [ Conformidade 100% com Provimento 205/2021 OAB ]
-                    </motion.p>
                 </div>
             </div>
         </section>

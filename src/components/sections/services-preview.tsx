@@ -61,7 +61,7 @@ export function ServicesPreview() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
                     {PLANS.map((plan, i) => (
                         <motion.div
                             key={plan.name}
@@ -71,6 +71,7 @@ export function ServicesPreview() {
                             transition={{ delay: i * 0.1 }}
                             className={cn(
                                 "group relative flex flex-col p-8 rounded-lg border transition-all duration-300",
+                                i === 2 && "md:col-span-2 xl:col-span-1",
                                 plan.featured
                                     ? "bg-background border-accent/50 shadow-lg ring-1 ring-accent/20"
                                     : "bg-background/50 border-border hover:border-primary/30"
@@ -106,11 +107,11 @@ export function ServicesPreview() {
                                 </p>
                                 <Button
                                     variant={plan.featured ? "default" : "outline"}
-                                    className="w-full group"
+                                    className="w-full group min-h-[56px] h-auto py-4 text-xs leading-tight md:text-sm"
                                     asChild
                                 >
                                     <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                        Falar com Consultor
+                                        Consultar Viabilidade para meu Escritório
                                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Link>
                                 </Button>

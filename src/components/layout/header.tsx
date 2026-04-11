@@ -8,12 +8,12 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
+    const useLightHeader = pathname === "/" && !isScrolled && !isOpen;
 
     const closeMenu = () => {
         setIsOpen(false);
@@ -28,12 +28,8 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close mobile menu on route change
-    // Close mobile menu on route change
     useEffect(() => {
-        if (isOpen) {
-            setIsOpen(false);
-        }
+        setIsOpen(false);
     }, [pathname]);
 
     // Lock body scroll when menu is open
@@ -67,7 +63,10 @@ export function Header() {
                             src="/logo.svg"
                             alt="Agência Juri"
                             fill
-                            className="object-contain object-left"
+                            className={cn(
+                                "object-contain object-left transition-all duration-300",
+                                useLightHeader && "brightness-0 invert"
+                            )}
                             priority
                         />
                     </div>
@@ -83,7 +82,9 @@ export function Header() {
                                 "text-sm font-medium tracking-wide transition-all uppercase relative group",
                                 pathname === link.href
                                     ? "text-accent font-bold"
-                                    : "text-muted-foreground hover:text-primary"
+                                    : useLightHeader
+                                        ? "text-secondary/80 hover:text-white"
+                                        : "text-muted-foreground hover:text-primary"
                             )}
                         >
                             {link.label}
@@ -93,7 +94,15 @@ export function Header() {
                             )} />
                         </Link>
                     ))}
-                    <Button variant="default" size="sm" className="rounded-full px-6" asChild>
+                    <Button
+                        variant="default"
+                        size="sm"
+                        className={cn(
+                            "rounded-full px-6",
+                            useLightHeader && "border-white/20 bg-white text-primary hover:bg-white/90"
+                        )}
+                        asChild
+                    >
                         <Link href={SITE_CONFIG.links.whatsapp} target="_blank">
                             Falar no WhatsApp
                         </Link>
@@ -102,7 +111,10 @@ export function Header() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden relative z-[110] p-2 text-primary"
+                    className={cn(
+                        "md:hidden relative z-[110] p-2 transition-colors",
+                        useLightHeader ? "text-white" : "text-primary"
+                    )}
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                     aria-expanded={isOpen}

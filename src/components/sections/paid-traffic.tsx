@@ -139,11 +139,11 @@ export function PaidTraffic() {
                         <div className="md:hidden">
                             <Button
                                 size="lg"
-                                className="group w-full h-14 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-sm font-bold uppercase tracking-wider items-center justify-center flex"
+                                className="group flex min-h-[56px] h-auto w-full items-center justify-center rounded-none border-b-4 border-accent-foreground/50 bg-accent px-4 py-4 text-sm font-bold uppercase tracking-[0.12em] leading-tight text-accent-foreground transition-all hover:translate-y-1 hover:border-b-0"
                                 asChild
                             >
                                 <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                    Quero iniciar o Diagnóstico
+                                    Consultar Viabilidade para meu Escritório
                                     <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                                 </Link>
                             </Button>
@@ -238,11 +238,11 @@ export function PaidTraffic() {
                     </p>
                     <Button
                         size="lg"
-                        className="group h-16 px-10 bg-accent text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 hover:border-b-0 hover:translate-y-1 transition-all text-sm font-bold uppercase tracking-wider"
+                        className="group min-h-[64px] h-auto bg-accent px-10 py-4 text-sm font-bold uppercase tracking-[0.12em] leading-tight text-accent-foreground rounded-none border-b-4 border-accent-foreground/50 transition-all hover:translate-y-1 hover:border-b-0"
                         asChild
                     >
                         <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                            Quero iniciar o Diagnóstico de Tráfego
+                            Consultar Viabilidade para meu Escritório
                             <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </Button>

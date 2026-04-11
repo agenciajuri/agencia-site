@@ -1,110 +1,136 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check, Users, Building, Building2 } from "lucide-react";
+import { ArrowRight, Building, Building2, Check, Users } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-    title: "Serviços | Agência Juri — Estrutura para Advocacia",
-    description: "Tráfego, landing pages, WhatsApp organizado e mensuração. Fluxo adaptado para autônomos, pequenos escritórios e boutiques.",
+    title: "Serviços | Agência Juri — Estrutura de Captação para Advocacia",
+    description:
+        "Planos adaptados ao tamanho do seu escritório. WhatsApp profissional, anúncios direcionados e acompanhamento quinzenal.",
 };
 
 const PACKAGES = [
     {
-        title: "Essencial",
-        target: "Autônomo ou início de carreira",
+        title: "Primeiro Fluxo",
+        target: "Advogado autônomo ou início de carreira",
         icon: Users,
-        description: "Ideal para quem quer o primeiro cliente pago em 30-45 dias.",
+        description:
+            "Para quem precisa dos primeiros clientes vindos do digital, com estrutura simples e segura.",
         features: [
-            "Diagnóstico Comercial",
-            "1 Página Exclusiva de Apresentação",
-            "WhatsApp Profissional Configurado",
-            "Anúncios Direcionados (Google/Meta)",
-            "Relatório Quinzenal"
+            "Diagnóstico da sua atuação e região",
+            "Página profissional do seu escritório",
+            "WhatsApp organizado com atendimento automático",
+            "Anúncios direcionados para sua cidade",
+            "Relatório quinzenal com resultados reais"
         ],
-        cta: "Falar com Consultor",
+        cta: "Solicitar Diagnóstico Gratuito",
         highlight: false
     },
     {
-        title: "Crescimento",
-        target: "Pequeno escritório (2-5 advogados)",
+        title: "Fluxo Constante",
+        target: "Escritório com 2 a 5 advogados",
         icon: Building,
-        description: "Para escritórios que precisam organizar o fluxo de entrada.",
+        description:
+            "Para quem já tem equipe e precisa de um volume previsível de novos contatos qualificados.",
         features: [
-            "Estratégia por Área de Atuação",
-            "2 Páginas Exclusivas de Apresentação",
-            "Funil Completo de Triagem",
-            "Mensuração Avançada (UTMs)",
-            "Governança Semanal"
+            "Estratégia separada por área de atuação",
+            "Duas páginas profissionais do escritório",
+            "Qualificação automática de quem entra em contato",
+            "Painel de resultados com dados reais",
+            "Reunião semanal de acompanhamento"
         ],
-        cta: "Falar com Consultor",
+        cta: "Solicitar Diagnóstico Gratuito",
         highlight: true
     },
     {
-        title: "Escala",
-        target: "Boutique ou Consolidado",
+        title: "Operação Completa",
+        target: "Escritório consolidado ou boutique",
         icon: Building2,
-        description: "Dominar a região e escalar operação comercial.",
+        description:
+            "Para quem quer dominar sua região e ter controle total da captação.",
         features: [
-            "Site Institucional Completo",
-            "SEO Local Otimizado",
-            "Funis por Unidade/Sócio",
-            "Dashboards de BI em Tempo Real",
-            "Consultoria Compliance Contínua"
+            "Site institucional completo e otimizado",
+            "Posicionamento no Google para sua cidade",
+            "Processos separados por sócio ou unidade",
+            "Painel de resultados em tempo real",
+            "Consultoria contínua de compliance OAB"
         ],
-        cta: "Falar com Consultor",
+        cta: "Solicitar Diagnóstico Gratuito",
         highlight: false
+    }
+];
+
+const INCLUDED_ITEMS = [
+    {
+        title: "Dentro das normas da OAB",
+        description:
+            "Toda comunicação revisada para estar de acordo com o Provimento 205/2021. Sem risco para seu registro."
+    },
+    {
+        title: "Números que importam",
+        description:
+            "Relatórios que mostram contatos recebidos, agendamentos e custo real — não apenas cliques ou curtidas."
+    },
+    {
+        title: "Contato direto",
+        description:
+            "Você fala com quem cuida da sua conta. Sem fila de atendimento, sem chamado que some."
+    },
+    {
+        title: "Tudo é seu",
+        description:
+            "Sites, contas, acessos — tudo o que criamos pertence ao seu escritório. Sem fidelidade forçada."
     }
 ];
 
 export default function ServicesPage() {
     return (
-        <div className="bg-background min-h-screen">
-            {/* Header Section */}
-            <section className="pt-32 pb-16 container px-4 md:px-6">
-                <h1 className="text-5xl md:text-7xl font-display uppercase tracking-tight text-primary mb-6">
-                    Nossos Serviços
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                    Entregamos estrutura comercial completa, adaptada ao tamanho e maturidade do seu escritório.
-                </p>
+        <div className="min-h-screen bg-background">
+            <section className="container px-4 pb-16 pt-32 md:px-6">
+                <div className="max-w-4xl">
+                    <h1 className="text-5xl font-display uppercase tracking-tight text-primary md:text-7xl">
+                        O que fazemos pelo seu escritório
+                    </h1>
+                    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-muted-foreground">
+                        Montamos o processo que traz novos clientes, organiza o atendimento e gera agendamentos — tudo dentro das regras da OAB.
+                    </p>
+                </div>
             </section>
 
-            {/* Packages Section */}
-            <section className="py-16 border-t border-border">
+            <section className="border-t border-border py-16">
                 <div className="container px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {PACKAGES.map((pkg) => (
-                            <div
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                        {PACKAGES.map((pkg, index) => (
+                            <article
                                 key={pkg.title}
-                                className={`relative flex flex-col p-8 border ${pkg.highlight
+                                className={`relative flex flex-col border p-8 shadow-[8px_8px_0_rgba(15,23,42,0.06)] ${pkg.highlight
                                     ? "border-accent bg-accent/5"
                                     : "border-border bg-card"
-                                    }`}
+                                    } ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
                             >
                                 {pkg.highlight && (
-                                    <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
-                                        Mais Escolhido
+                                    <div className="absolute right-0 top-0 bg-accent px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+                                        Mais escolhido
                                     </div>
                                 )}
 
                                 <div className="mb-6">
-                                    <pkg.icon className="w-10 h-10 text-primary mb-4" />
-                                    <h3 className="text-2xl font-display uppercase tracking-wide mb-1">
+                                    <pkg.icon className="mb-4 h-10 w-10 text-primary" />
+                                    <h2 className="text-2xl font-display uppercase tracking-wide text-primary">
                                         {pkg.title}
-                                    </h3>
-                                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4">
+                                    </h2>
+                                    <p className="mt-2 text-xs font-bold uppercase tracking-widest text-accent">
                                         {pkg.target}
                                     </p>
-                                    <p className="text-muted-foreground text-sm leading-relaxed min-h-[40px]">
+                                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
                                         {pkg.description}
                                     </p>
                                 </div>
 
-                                <ul className="flex-1 space-y-4 mb-8">
+                                <ul className="mb-8 flex-1 space-y-4">
                                     {pkg.features.map((feature) => (
-                                        <li key={feature} className="flex items-start gap-3 text-sm">
-                                            <Check className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                                        <li key={feature} className="flex items-start gap-3 text-sm md:text-base">
+                                            <Check className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
                                             <span className="text-primary/90">{feature}</span>
                                         </li>
                                     ))}
@@ -112,42 +138,39 @@ export default function ServicesPage() {
 
                                 <Button
                                     variant={pkg.highlight ? "default" : "outline"}
-                                    className="w-full"
+                                    className="min-h-[56px] h-auto w-full py-4 text-xs leading-tight md:text-sm"
                                     asChild
                                 >
-                                    <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                        {pkg.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                                    <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank" rel="noopener noreferrer">
+                                        {pkg.cta}
+                                        <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
                                 </Button>
-                            </div>
+                            </article>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Methodology Snippet */}
-            <section className="py-24 bg-primary text-secondary">
-                <div className="container px-4 md:px-6 text-center">
-                    <h2 className="text-3xl md:text-5xl font-display uppercase tracking-tight mb-8">
-                        O que está incluso em todos os planos?
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left max-w-5xl mx-auto">
-                        <div className="p-6 border border-white/10">
-                            <h3 className="font-bold uppercase tracking-wide mb-2">Compliance OAB</h3>
-                            <p className="text-sm text-secondary/70">Todas as peças e páginas revisadas para não ferir o código de ética.</p>
-                        </div>
-                        <div className="p-6 border border-white/10">
-                            <h3 className="font-bold uppercase tracking-wide mb-2">Mensuração Real</h3>
-                            <p className="text-sm text-secondary/70">Relatórios que mostram leads, agendamentos e custo real, não apenas &quot;cliques&quot;.</p>
-                        </div>
-                        <div className="p-6 border border-white/10">
-                            <h3 className="font-bold uppercase tracking-wide mb-2">Suporte Próximo</h3>
-                            <p className="text-sm text-secondary/70">Contato direto com quem cuida da sua conta. Sem chamados infinitos.</p>
-                        </div>
-                        <div className="p-6 border border-white/10">
-                            <h3 className="font-bold uppercase tracking-wide mb-2">Propriedade Intelectual</h3>
-                            <p className="text-sm text-secondary/70">Tudo o que criamos (sites, contas, pixels) é seu. Sem fidelidade forçada.</p>
-                        </div>
+            <section className="bg-primary py-24 text-secondary">
+                <div className="container px-4 md:px-6">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <h2 className="text-3xl font-display uppercase tracking-tight text-secondary md:text-5xl">
+                            O que está incluso em todos os planos
+                        </h2>
+                    </div>
+
+                    <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+                        {INCLUDED_ITEMS.map((item) => (
+                            <article key={item.title} className="border border-white/10 bg-white/5 p-6">
+                                <h3 className="text-xl font-display uppercase tracking-wide text-secondary">
+                                    {item.title}
+                                </h3>
+                                <p className="mt-3 text-sm leading-relaxed text-secondary/75">
+                                    {item.description}
+                                </p>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>

@@ -3,7 +3,6 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const FAQS = [
     {
@@ -21,6 +20,22 @@ const FAQS = [
     {
         question: "Serve pra escritório pequeno/médio?",
         answer: "É onde mais ajuda, porque reduz perda por falta de tempo e cria processo sem aumentar equipe."
+    },
+    {
+        question: "Vocês entendem as regras da OAB?",
+        answer: "Sim. Toda comunicação segue o Provimento 205/2021. Não usamos promessa de resultado, linguagem sensacionalista nem captação ativa de clientela. É o nosso diferencial técnico."
+    },
+    {
+        question: "Já investi em marketing antes e não funcionou. Por que seria diferente?",
+        answer: "Porque a maioria das agências genéricas não entende o contexto jurídico. Aqui o foco não é \"fazer post bonito\" — é estruturar captação com processo: atração do público certo, triagem automática e atendimento rápido. Se o lead chega e ninguém responde em 2 minutos, não é problema de anúncio."
+    },
+    {
+        question: "Meus clientes vêm por indicação. Preciso mesmo de marketing digital?",
+        answer: "Indicação é ótima, mas imprevisível. Você não controla quando vem nem quantas vêm. O digital cria um segundo canal de entrada constante e mensurável, sem substituir a indicação — complementando ela."
+    },
+    {
+        question: "Quanto tempo até ver resultado?",
+        answer: "O funil entra no ar em 7 a 14 dias. Primeiros leads costumam aparecer na primeira quinzena. O sistema melhora com o tempo porque os dados reais alimentam as otimizações. Não prometemos resultado mágico no dia 1, mas entregamos processo desde o dia 1."
     }
 ];
 

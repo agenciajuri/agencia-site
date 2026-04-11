@@ -1,25 +1,21 @@
 import { Hero } from "@/components/sections/hero";
-import { PaidTraffic } from "@/components/sections/paid-traffic";
-import { PainPoints } from "@/components/sections/pain-points";
-import { ConversionSystem } from "@/components/sections/conversion-system";
 import { TeamComparison } from "@/components/sections/team-comparison";
-import { ServicesPreview } from "@/components/sections/services-preview";
 import { SocialProof } from "@/components/sections/social-proof";
-import { Compliance } from "@/components/sections/compliance";
-import { Faq } from "@/components/sections/faq";
+import { CredentialsBar } from "@/components/sections/credentials-bar";
+import { FinalCapture } from "@/components/sections/final-capture";
+import { PainSection } from "@/components/sections/pain-section";
+import { TrustSection } from "@/components/sections/trust-section";
 
 export default function Home() {
     return (
         <>
             <Hero />
-            <PaidTraffic />
-            <PainPoints />
-            <ConversionSystem />
+            <CredentialsBar />
+            <PainSection />
+            <FinalCapture />
             <TeamComparison />
-            <ServicesPreview />
-            <Compliance />
             <SocialProof />
-            <Faq />
+            <TrustSection />
         </>
     );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function Footer() {
@@ -34,7 +35,7 @@ export function Footer() {
                             <li><Link href="/servicos" className="hover:text-white transition-colors">Serviços</Link></li>
                             <li><Link href="/como-trabalhamos" className="hover:text-white transition-colors">Metodologia</Link></li>
                             <li><Link href="/sobre" className="hover:text-white transition-colors">Sobre Nós</Link></li>
-                            <li><Link href="/conteudos" className="hover:text-white transition-colors">Conteúdos</Link></li>
+                            <li><a href={SITE_CONFIG.links.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
                         </ul>
                     </div>
 
@@ -53,6 +54,10 @@ export function Footer() {
                         <h3 className="font-bold uppercase tracking-wide text-white">Contato</h3>
                         <address className="not-italic space-y-2 text-secondary/80">
                             <p>{SITE_CONFIG.contact.address}</p>
+                            <p className="flex items-start gap-2">
+                                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                                <span>Presença regional em Goiânia, Anápolis, Aparecida e Rio Verde</span>
+                            </p>
                             <p>{SITE_CONFIG.contact.phone}</p>
                             <p>{SITE_CONFIG.contact.hours}</p>
                         </address>

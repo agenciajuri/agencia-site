@@ -146,11 +146,11 @@ export function ConversionSystem() {
 
                                 <Button
                                     size="lg"
-                                    className="w-full group h-16 md:h-20 bg-accent text-accent-foreground rounded-none shadow-xl hover:-translate-y-1 transition-all text-xs md:text-sm font-bold uppercase tracking-wider"
+                                    className="w-full group min-h-[56px] h-auto bg-accent px-4 py-4 text-xs font-bold uppercase tracking-[0.14em] leading-tight text-accent-foreground rounded-none shadow-xl transition-all hover:-translate-y-1 md:min-h-[72px] md:text-sm"
                                     asChild
                                 >
                                     <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                        Quero o combo Site + WhatsApp
+                                        Consultar Viabilidade para meu Escritório
                                         <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
                                     </Link>
                                 </Button>

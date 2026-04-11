@@ -83,7 +83,7 @@ export function PainPoints() {
                                 },
                                 {
                                     icon: Handshake,
-                                    title: "Follw-up Automático",
+                                    title: "Follow-up Automático",
                                     desc: "Chama novamente se a pessoa parar de responder."
                                 },
                                 {

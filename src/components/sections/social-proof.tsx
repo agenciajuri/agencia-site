@@ -1,119 +1,144 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { motion, animate } from "framer-motion";
+import { useRef } from "react";
+
+const METRICS = [
+    {
+        value: 93,
+        prefix: "",
+        suffix: "%",
+        description: "dos contatos respondidos em menos de 2 minutos"
+    },
+    {
+        value: 3,
+        prefix: "",
+        suffix: "x",
+        description: "mais consultas agendadas com atendimento automático no WhatsApp"
+    },
+    {
+        value: 40,
+        prefix: "+",
+        suffix: "%",
+        description: "mais agendamentos com site profissional + WhatsApp integrados"
+    }
+];
+
+const TESTIMONIALS = [
+    {
+        quote: "Antes eu perdia metade dos contatos porque não conseguia responder rápido. Hoje o WhatsApp filtra, qualifica e agenda sozinho. Entro na conversa já sabendo o contexto.",
+        author: "Advogado Trabalhista, Goiânia - GO"
+    },
+    {
+        quote: "O site antigo era bonito mas não gerava contato. Depois que trocaram pra página com foco em conversão e integraram com o WhatsApp, os agendamentos dobraram em 45 dias.",
+        author: "Advogada Família e Sucessões, Brasília - DF"
+    },
+    {
+        quote: "Sempre tive medo de fazer anúncio e levar problema com a OAB. Eles montaram tudo dentro do Provimento 205 e eu parei de ter medo de receber notificação da seccional.",
+        author: "Advogado Previdenciarista, Anápolis - GO"
+    }
+];
+
+function MetricValue({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
+    const ref = useRef<HTMLSpanElement>(null);
+
+    return (
+        <motion.span
+            ref={ref}
+            onViewportEnter={() => {
+                const node = ref.current;
+
+                if (!node) {
+                    return;
+                }
+
+                animate(0, value, {
+                    duration: 1.2,
+                    ease: [0.16, 1, 0.3, 1],
+                    onUpdate(latest) {
+                        node.textContent = `${prefix}${Math.round(latest)}${suffix}`;
+                    }
+                });
+            }}
+            viewport={{ once: true }}
+        >
+            {`${prefix}0${suffix}`}
+        </motion.span>
+    );
+}
 
 export function SocialProof() {
     return (
-        <section className="relative py-32 md:py-48 bg-primary overflow-hidden flex items-center min-h-[70vh]">
-            {/* Background Image Layer */}
-            <motion.div
-                initial={{ scale: 1.1 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 10, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="absolute inset-0 z-0"
-            >
-                <Image
-                    src="/image/advogado-escritorio-justica-primeiro-plano.jpg"
-                    alt="Estátua da Justiça em primeiro plano com advogado ao fundo em escritório"
-                    fill
-                    className="object-cover object-center grayscale-[30%] opacity-40 mix-blend-overlay"
-                />
-                {/* Heavy Dark Overlay for Brutalist Contrast */}
-                <div className="absolute inset-0 bg-primary/90 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
-            </motion.div>
+        <section className="relative overflow-hidden bg-primary py-24 text-secondary md:py-32">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_40%)]" />
 
-            <div className="container relative z-10 px-4 md:px-6 text-center">
-                <div className="max-w-4xl mx-auto flex flex-col items-center">
-
-                    {/* Brutalist Label */}
+            <div className="container relative z-10 px-4 md:px-6">
+                <div className="mx-auto max-w-6xl">
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center justify-center gap-2 mb-8"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="max-w-3xl"
                     >
-                        <span className="w-8 h-[2px] bg-accent" />
-                        <span className="text-accent text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
-                            O Próximo Passo
-                        </span>
-                        <span className="w-8 h-[2px] bg-accent" />
-                    </motion.div>
-
-                    {/* Massive Typography Main Call */}
-                    <motion.h2
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-7xl font-display uppercase tracking-tighter leading-[0.9] text-secondary mb-8"
-                    >
-                        Aumente o Volume <br />
-                        <span className="text-accent underline decoration-4 underline-offset-8">Com Qualidade.</span>
-                    </motion.h2>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-lg md:text-xl text-secondary/70 max-w-2xl mb-12 leading-relaxed"
-                    >
-                        Quer parar de perder tempo com curiosos lotando sua caixa? Ativamos <strong className="text-secondary">Tráfego Pago</strong> com método, inteligência e otimização quinzenal proativa.
-                    </motion.p>
-
-                    {/* High Impact CTA Buttons */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 }}
-                        className="flex flex-col gap-4 w-full max-w-3xl mx-auto"
-                    >
-                        <Button
-                            size="lg"
-                            className="group h-16 md:h-20 px-4 md:px-8 bg-accent text-accent-foreground hover:bg-white hover:text-black rounded-none transition-all text-xs md:text-sm lg:text-base font-bold uppercase tracking-widest shadow-2xl relative overflow-hidden"
-                            asChild
-                        >
-                            <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                <span className="relative z-10 flex items-center justify-center w-full">
-                                    Quero a operação completa (Site + WA + Tráfego)
-                                    <ArrowRight className="ml-3 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-2" />
-                                </span>
-                                {/* Hover background effect */}
-                                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0" />
-                            </Link>
-                        </Button>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="h-14 md:h-16 px-4 bg-transparent border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60 hover:text-white rounded-none transition-all text-[10px] md:text-xs font-bold uppercase tracking-wider"
-                                asChild
-                            >
-                                <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                    Quero parar de perder lead no WhatsApp
-                                </Link>
-                            </Button>
-
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="h-14 md:h-16 px-4 bg-transparent border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60 hover:text-white rounded-none transition-all text-[10px] md:text-xs font-bold uppercase tracking-wider"
-                                asChild
-                            >
-                                <Link href="https://viewer.agenciajuri.com.br/diagnostico-advogados" target="_blank">
-                                    Quero previsibilidade de captação e agenda
-                                </Link>
-                            </Button>
+                        <div className="mb-6 inline-flex items-center gap-2">
+                            <span className="h-[2px] w-8 bg-accent" />
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent md:text-sm">
+                                Resultados de quem já usa
+                            </span>
                         </div>
+
+                        <h2 className="text-4xl font-display uppercase tracking-tight text-secondary md:text-5xl lg:text-6xl">
+                            Números reais de escritórios atendidos.
+                        </h2>
+                        <p className="mt-5 max-w-2xl text-base leading-relaxed text-secondary/70 md:text-lg">
+                            Um escritório bem estruturado não depende de sorte. Depende de resposta rápida, qualificação clara e acompanhamento constante.
+                        </p>
                     </motion.div>
+
+                    <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
+                        {METRICS.map((metric, index) => (
+                            <motion.div
+                                key={metric.description}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.4 }}
+                                transition={{ delay: index * 0.1, duration: 0.45 }}
+                                className="border border-white/15 bg-white/[0.04] p-6 shadow-[10px_10px_0_rgba(0,0,0,0.16)]"
+                            >
+                                <p className="text-4xl font-display uppercase tracking-tight text-accent md:text-5xl">
+                                    <MetricValue
+                                        value={metric.value}
+                                        prefix={metric.prefix}
+                                        suffix={metric.suffix}
+                                    />
+                                </p>
+                                <p className="mt-4 text-sm leading-relaxed text-secondary/75 md:text-base">
+                                    {metric.description}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                        {TESTIMONIALS.map((testimonial, index) => (
+                            <motion.article
+                                key={testimonial.author}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ delay: index * 0.1, duration: 0.45 }}
+                                className="flex h-full flex-col justify-between border border-white/15 bg-black/20 p-6"
+                            >
+                                <p className="text-base leading-relaxed text-secondary/85">
+                                    &ldquo;{testimonial.quote}&rdquo;
+                                </p>
+                                <p className="mt-6 border-t border-white/10 pt-4 text-xs font-bold uppercase tracking-[0.14em] text-accent/90">
+                                    {testimonial.author}
+                                </p>
+                            </motion.article>
+                        ))}
+                    </div>
+
                 </div>
             </div>
         </section>
