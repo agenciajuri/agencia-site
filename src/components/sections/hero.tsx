@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const HERO_POSTER = "/image/hero-estatua-justica-balanca-fundo-escuro.jpg";
-const HERO_VIDEO_SRC: string = "https://www.youtube-nocookie.com/embed/J1gGhFSOtcA?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1";
+const HERO_VIDEO_SRC: string = "https://www.youtube-nocookie.com/embed/J1gGhFSOtcA?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1";
 
 export function Hero() {
     const { scrollY } = useScroll();
@@ -31,6 +31,48 @@ export function Hero() {
 
         iframe.src = iframe.dataset.src || "about:blank";
     }, [isVideoLoaded]);
+
+    useEffect(() => {
+        if (!hasVideoUrl) {
+            return;
+        }
+
+        let unmuted = false;
+
+        const unmute = () => {
+            if (unmuted) {
+                return;
+            }
+
+            const iframe = iframeRef.current;
+            const win = iframe?.contentWindow;
+
+            if (!iframe || !win) {
+                return;
+            }
+
+            win.postMessage('{"event":"command","func":"unMute","args":[]}', "*");
+            win.postMessage('{"event":"command","func":"setVolume","args":[100]}', "*");
+            unmuted = true;
+            removeListeners();
+        };
+
+        const removeListeners = () => {
+            window.removeEventListener("scroll", unmute);
+            window.removeEventListener("click", unmute);
+            window.removeEventListener("touchstart", unmute);
+            window.removeEventListener("keydown", unmute);
+            window.removeEventListener("pointerdown", unmute);
+        };
+
+        window.addEventListener("scroll", unmute, { passive: true });
+        window.addEventListener("click", unmute);
+        window.addEventListener("touchstart", unmute, { passive: true });
+        window.addEventListener("keydown", unmute);
+        window.addEventListener("pointerdown", unmute);
+
+        return removeListeners;
+    }, [hasVideoUrl]);
 
     return (
         <section className="relative flex min-h-[95vh] items-center overflow-hidden bg-background">
