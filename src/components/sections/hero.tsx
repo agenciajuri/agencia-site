@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const HERO_POSTER = "/image/hero-estatua-justica-balanca-fundo-escuro.jpg";
-const HERO_VIDEO_SRC: string = "https://www.youtube.com/embed/J1gGhFSOtcA?autoplay=1&mute=1&playsinline=1&rel=0";
+const HERO_VIDEO_SRC: string = "https://www.youtube-nocookie.com/embed/J1gGhFSOtcA?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1";
 
 export function Hero() {
     const { scrollY } = useScroll();
